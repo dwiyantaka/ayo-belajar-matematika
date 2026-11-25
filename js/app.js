@@ -109,6 +109,20 @@
     if (wImgBagi && !wImgBagi.firstChild && window.Aset) {
       wImgBagi.appendChild(window.Aset.img("ui.pembagian"));
     }
+
+    // 7. Ikon Petunjuk pada Layar Panduan Aplikasi
+    var petaIkonPanduan = [
+      { id: "panduan-ikon-kembali", kunci: "ui.ikon-kembali" },
+      { id: "panduan-ikon-hamburger", kunci: "ui.ikon-humberger" },
+      { id: "panduan-ikon-info", kunci: "ui.ikon-funfact" },
+      { id: "panduan-ikon-bantuan", kunci: "ui.ikon-bantuan" }
+    ];
+    petaIkonPanduan.forEach(function (p) {
+      var el = document.getElementById(p.id);
+      if (el && !el.firstChild && window.Aset) {
+        el.appendChild(window.Aset.img(p.kunci));
+      }
+    });
   }
 
   /* Perbarui Tampilan Ikon Speaker Global */

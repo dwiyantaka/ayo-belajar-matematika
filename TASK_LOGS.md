@@ -727,3 +727,23 @@ Catat satu entri per task. Format:
   - Uji klik tombol panah kanan untuk berpindah ke profil halaman 2, dan klik tombol panah kiri untuk kembali ke halaman 1.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+---
+
+## Perubahan Konten & Tata Letak Layar Panduan Aplikasi — 2026-11-25
+- **Dibuat/diubah:**
+  - `index.html`: memperbarui teks dan struktur layar `#layar-panduan` sesuai format permintaan pengguna:
+    - Salam pembuka: "Selamat Datang!" dan pengenalan dua menu utama ("Ruang Bermain" dan "Ruang Belajar").
+    - Deskripsi rincian Ruang Belajar (tabel perkalian & pembagian 1–10) dan Ruang Bermain (Hitung Jajan & Balap Becak).
+    - Grid 4 petunjuk ikon: kembali (`ui.ikon-kembali`), menu hamburger (`ui.ikon-humberger`), info funfact (`ui.ikon-funfact`), dan bantuan aturan (`ui.ikon-bantuan`).
+  - `css/style.css`: menambahkan styling untuk `.panduan-konten`, `.panduan-salam`, `.panduan-deskripsi`, `.panduan-menu-info`, dan grid 2 kolom `.panduan-ikon-grid` beserta kotaknya agar proporsional di panggung 1366×768.
+  - `js/app.js`: menambahkan pemuatan gambar ikon panduan via `window.Aset.img(...)` pada `initAsetLayar()`.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos validasi sintaks.
+  - `node tools/cek-aset.mjs`: gambar 98/98 ada, soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html` di peramban.
+  - Masuk ke layar "Panduan Aplikasi" (baik dari alur awal atau melalui tombol hamburger -> Panduan Aplikasi).
+  - Pastikan teks tersusun rapi: salam pembuka, rincian menu belajar & bermain, serta 4 kartu petunjuk ikon dengan gambarnya masing-masing.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

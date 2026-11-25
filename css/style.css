@@ -1076,33 +1076,102 @@ body {
   margin: 40px 20px;
 }
 
-/* Panduan Tabs / List */
-.panduan-daftar {
+/* Panduan Aplikasi Layout */
+.panduan-konten {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  font-size: 24px;
+  gap: 14px;
+}
+
+.panduan-header {
+  text-align: left;
+}
+
+.panduan-salam {
+  font-family: var(--font-judul);
+  font-size: 30px;
+  color: var(--soga);
+  margin: 0 0 4px 0;
+}
+
+.panduan-deskripsi {
+  font-size: 21px;
+  color: var(--teks);
   line-height: 1.4;
+  margin: 0;
 }
 
-.panduan-item {
+.panduan-menu-info {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px dashed var(--soga);
+  border-radius: 14px;
+  padding: 10px 18px;
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.panduan-nomor {
-  background: var(--terakota);
-  color: var(--teks-terang);
-  width: 44px;
-  height: 44px;
+.panduan-menu-baris {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 20px;
+  color: var(--teks);
+  line-height: 1.35;
+}
+
+.panduan-menu-baris p {
+  margin: 0;
+}
+
+.panduan-menu-titik {
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
+  background: var(--terakota);
+  flex-shrink: 0;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+.panduan-ikon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-top: 2px;
+}
+
+.panduan-ikon-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-judul);
-  font-weight: bold;
+  gap: 14px;
+  background: var(--teks-terang);
+  border: 2px solid var(--soga);
+  border-radius: 12px;
+  padding: 8px 14px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.panduan-ikon-wadah {
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panduan-ikon-wadah img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.panduan-ikon-teks {
+  font-size: 19px;
+  color: var(--teks);
+  line-height: 1.3;
 }
 
 /* Layar Profil Pengembang (2 Halaman) */
