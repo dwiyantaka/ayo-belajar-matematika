@@ -747,3 +747,21 @@ Catat satu entri per task. Format:
   - Pastikan teks tersusun rapi: salam pembuka, rincian menu belajar & bermain, serta 4 kartu petunjuk ikon dengan gambarnya masing-masing.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+---
+
+## Penambahan Logo UNY pada Layar Bumper — 2026-11-25
+- **Dibuat/diubah:**
+  - `assets/img/ui/logo-uny.png`: menyalin berkas logo resmi Universitas Negeri Yogyakarta (UNY) dari unggahan pengguna.
+  - `assets/manifest.js`: mendaftarkan entri `ui.logo-uny` (`ui/logo-uny.png`), menaikkan versi cache aset menjadi 15.
+  - `index.html`: menambahkan elemen `.bumper-logo-instansi` (`#wadah-bumper-logo-instansi`) pada `#layar-bumper` di pojok kiri atas.
+  - `css/style.css`: menambahkan aturan gaya `.bumper-logo-instansi` dengan posisi absolut (`top: 20px; left: 25px;`), wadah putih bundar (`border-radius: 50%`, `background: var(--teks-terang)`), bayangan lembut (`box-shadow`), serta penataan logo di tengah lingkaran.
+  - `js/app.js`: memuat gambar `ui.logo-uny` melalui `window.Aset.img()` pada `initAsetLayar()`.
+- **Verifikasi:**
+  - `node -c js/*.js`: seluruh skrip lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 terdaftar dan tersedia lengkap.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html` di peramban.
+  - Periksa layar bumper (halaman awal): pastikan logo UNY tampil di pojok kiri atas dalam wadah lingkaran putih dengan bayangan (shadow) yang rapi dan elegan.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

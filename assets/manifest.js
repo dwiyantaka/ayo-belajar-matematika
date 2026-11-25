@@ -13,6 +13,7 @@ window.ASET_MANIFEST = (function () {
 
   /* ---- UI ---- */
   g("ui.logo", "ui/logo.svg", "Logo / judul Ayo Belajar Matematika", "600x240");
+  g("ui.logo-uny", "ui/logo-uny.png", "Logo Universitas Negeri Yogyakarta", "400x400");
   g("ui.latar-bumper", "ui/latar-bumper.webp", "Latar bumper", "1366x768");
   g("ui.latar-menu", "ui/latar-menu.svg", "Latar menu (kuning)", "1366x768");
   g("ui.latar-belajar", "ui/latar-belajar.svg", "Latar Ruang Belajar", "1366x768");
@@ -60,9 +61,9 @@ window.ASET_MANIFEST = (function () {
   g("ornamen.tirai-kanan", "ornamen/tirai-kanan.svg", "Tirai transisi kanan", "700x768");
 
   /* ---- MAKANAN (1 ikon per objek; dipakai berulang sebagai objek hitung) ---- */
-  g("makanan.klepon", "makanan/klepon.webp", "Klepon", "256x256");
-  g("makanan.getuk", "makanan/getuk.webp", "Getuk", "256x256");
-  g("makanan.cenil", "makanan/cenil.webp", "Cenil", "256x256");
+  g("makanan.getuk", "makanan/getuk.webp", "Getuk", "300x300");
+  g("makanan.klepon", "makanan/klepon.webp", "Klepon", "100x100");
+  g("makanan.cenil", "makanan/cenil.webp", "Cenil", "380x380");
   g("makanan.bakpia", "makanan/bakpia.svg", "Bakpia", "256x256");
   g("makanan.geplak", "makanan/geplak.svg", "Geplak", "256x256");
   g("makanan.yangko", "makanan/yangko.svg", "Yangko", "256x256");
@@ -131,7 +132,7 @@ window.ASET_MANIFEST = (function () {
   g("ui.tombol-kunci", "ui/tombol-kunci.svg", "Kotak label tombol keyboard", "96x96");
 
   return {
-    versi: 14,                                  /* naikkan setelah mengganti isi berkas */
+    versi: 15,                                  /* naikkan setelah mengganti isi berkas */
     gambar: G,
     audio: A,
     narasiFolder: "assets/audio/narasi/",       /* narasi per soal: <ID>.mp3, mis. P-03.mp3 */

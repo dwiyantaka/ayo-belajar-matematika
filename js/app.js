@@ -40,15 +40,19 @@
     }
     perbaruiIkonSpeaker();
 
-    // 3. Layar Bumper: Latar Bumper & 3 Makanan Jawa
+    // 3. Layar Bumper: Logo UNY, Latar Bumper & 3 Makanan Jawa
+    var wadahLogoUny = document.getElementById("wadah-img-logo-uny");
+    if (wadahLogoUny && !wadahLogoUny.firstChild && window.Aset) {
+      wadahLogoUny.appendChild(window.Aset.img("ui.logo-uny"));
+    }
     var wadahLatarBumper = document.getElementById("wadah-bumper-latar");
     if (wadahLatarBumper && !wadahLatarBumper.firstChild) {
       wadahLatarBumper.appendChild(window.Aset.img("ui.latar-bumper"));
     }
     var wadahMakanan = document.getElementById("wadah-bumper-makanan");
     if (wadahMakanan && !wadahMakanan.firstChild) {
-      wadahMakanan.appendChild(window.Aset.img("makanan.klepon"));
       wadahMakanan.appendChild(window.Aset.img("makanan.getuk"));
+      wadahMakanan.appendChild(window.Aset.img("makanan.klepon"));
       wadahMakanan.appendChild(window.Aset.img("makanan.cenil"));
     }
 
