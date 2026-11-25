@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect x="4" y="4" width="192" height="192" rx="20" fill="#B3C65A" stroke="#6B3F1D" stroke-width="4" stroke-dasharray="14 8"/>
+  <text x="100" y="96" font-family="sans-serif" font-size="22.22222222222222" font-weight="700" text-anchor="middle" fill="#6B3F1D">Lencana hadiah (opsional)</text>
+  <text x="100" y="122.22222222222223" font-family="sans-serif" font-size="13.333333333333332" text-anchor="middle" fill="#6B3F1D">ui.lencana (200x200)</text>
+</svg>

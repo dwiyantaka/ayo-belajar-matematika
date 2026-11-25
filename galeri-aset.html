@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><title>Galeri Aset</title>
+<link rel="stylesheet" href="css/tema.css"><link rel="stylesheet" href="css/fonts.css">
+<style>
+body{font-family:var(--font-isi);background:var(--krem);color:var(--teks);margin:0;padding:24px}
+h1,h2{font-family:var(--font-judul);color:var(--hijau-tua)}
+.ringkas{padding:12px 16px;background:#fff;border-radius:12px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.kartu{background:#fff;border-radius:12px;padding:10px;font-size:13px;border:2px solid transparent}
+.kartu.ok{border-color:var(--benar)}.kartu.hilang{border-color:var(--salah)}
+.kartu img{width:100%;height:130px;object-fit:contain;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/16px 16px;border-radius:8px}
+code{font-size:12px;word-break:break-all}.s{font-weight:700}.ok .s{color:var(--benar)}.hilang .s{color:var(--salah)}
+.sw{display:inline-block;width:90px;height:50px;border-radius:8px;margin:4px;color:#fff;font-size:11px;padding:4px;vertical-align:top}
+</style></head><body>
+<h1>Galeri Aset</h1>
+<div class="ringkas" id="ringkas">Memeriksa…</div>
+<p>Versi manifest: <b id="v"></b>. Ganti isi berkas lalu naikkan <code>versi</code> di <code>assets/manifest.js</code>, muat ulang halaman (Ctrl+F5).</p>
+<h2>Gambar</h2><div class="grid" id="gambar"></div>
+<h2>Audio</h2><div class="grid" id="audio"></div>
+<h2>Tema</h2><div id="tema"></div>
+<h2>Font</h2><p style="font-family:var(--font-judul);font-size:40px;margin:0">Ayo Belajar Matematika (judul)</p><p style="font-size:28px;margin:0">Bu Ani membawa 48 potong getuk (isi)</p>
+<script src="assets/manifest.js"></script><script src="js/aset.js"></script>
+<script>
+(function(){
+  var M=Aset.manifest, ok=0, total=0;
+  document.getElementById("v").textContent=M.versi;
+  function ringkas(){document.getElementById("ringkas").textContent="Gambar tersedia: "+ok+" dari "+total+" (sisanya tampil sebagai placeholder)";}
+  Object.keys(M.gambar).forEach(function(k){
+    var e=M.gambar[k]; total++;
+    var d=document.createElement("div"); d.className="kartu";
+    var im=Aset.img(k); d.appendChild(im);
+    var st=document.createElement("div"); st.innerHTML='<div class="s">memeriksa…</div><b>'+e.label+'</b><br><code>'+k+'</code><br><code>'+e.file+'</code><br>'+e.ukuran;
+    d.appendChild(st);
+    var cek=new Image(); cek.onload=function(){d.className="kartu ok";st.querySelector(".s").textContent="OK";ok++;ringkas();};
+    cek.onerror=function(){d.className="kartu hilang";st.querySelector(".s").textContent="BELUM ADA (placeholder)";ringkas();};
+    cek.src=e.file+"?v="+M.versi;
+    document.getElementById("gambar").appendChild(d);
+  });
+  ringkas();
+  Object.keys(M.audio).forEach(function(k){
+    var e=M.audio[k]; var d=document.createElement("div"); d.className="kartu";
+    var au=new Audio(); au.preload="metadata";
+    d.innerHTML='<div class="s">memeriksa…</div><b>'+e.label+'</b><br><code>'+k+'</code><br><code>'+e.file+'</code><br>';
+    var b=document.createElement("button"); b.textContent="▶ Putar"; b.disabled=true; d.appendChild(b);
+    au.onloadedmetadata=function(){d.className="kartu ok";d.querySelector(".s").textContent="OK";b.disabled=false;};
+    au.onerror=function(){d.className="kartu hilang";d.querySelector(".s").textContent="BELUM ADA (diam)";};
+    b.onclick=function(){au.currentTime=0;au.play();};
+    au.src=e.file+"?v="+M.versi;
+    document.getElementById("audio").appendChild(d);
+  });
+  var t=document.getElementById("tema"), cs=getComputedStyle(document.documentElement);
+  ["--hijau-tua","--kuning","--hijau-muda","--terakota","--krem","--soga","--benar","--salah"].forEach(function(n){
+    var s=document.createElement("span"); s.className="sw"; var c=cs.getPropertyValue(n).trim();
+    s.style.background=c; s.style.color=(n==="--krem"||n==="--kuning"||n==="--hijau-muda")?"#333":"#fff"; s.textContent=n+" "+c; t.appendChild(s);
+  });
+})();
+</script></body></html>

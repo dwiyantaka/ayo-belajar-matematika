@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect x="4" y="4" width="292" height="292" rx="30" fill="#B3C65A" stroke="#6B3F1D" stroke-width="4" stroke-dasharray="14 8"/>
+  <text x="150" y="146" font-family="sans-serif" font-size="33.333333333333336" font-weight="700" text-anchor="middle" fill="#6B3F1D">Piala pemenang</text>
+  <text x="150" y="183.33333333333334" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#6B3F1D">ui.piala (300x300)</text>
+</svg>
