@@ -435,7 +435,8 @@
       var btnPanduanLewati = document.getElementById("btn-panduan-lewati");
 
       if (asal === "onboarding") {
-        if (btnPanduanKembali) btnPanduanKembali.textContent = "Kembali ke Awal";
+        // if (btnPanduanKembali) btnPanduanKembali.textContent = "Kembali ke Awal";
+        if (btnPanduanKembali) btnPanduanKembali.textContent = "Kembali";
         if (btnPanduanLanjut) btnPanduanLanjut.hidden = false;
         if (btnPanduanLewati) btnPanduanLewati.hidden = (putaranOnboarding === 0);
       } else {

@@ -520,34 +520,59 @@ body {
   margin-top: 10px;
 }
 
+/* Kelas dasar untuk seluruh tombol bertema tombol-start */
 .tombol-start {
   background: transparent url("../assets/img/ui/tombol-start.webp") center / 140% auto no-repeat;
   color: var(--teks-terang);
   border: none;
   border-radius: 0;
-  width: 380px;
-  height: 130px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-judul);
-  font-size: 38px;
   letter-spacing: 2px;
-  padding: 0 0 4px 0;
   cursor: pointer;
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
   transition: transform 0.15s, filter 0.15s;
-  animation: start-denyut 2.4s ease-in-out infinite;
 }
 
 .tombol-start:hover {
-  animation: none;
   transform: scale(1.08);
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35)) brightness(1.08);
 }
 
 .tombol-start:active {
   transform: scale(0.96);
+}
+
+/* 1. Tombol Mulai Aplikasi (Bumper) - Bisa diatur mandiri ukurannya */
+.tombol-start-aplikasi {
+  width: 380px;
+  height: 130px;
+  font-size: 38px;
+  padding: 0 0 4px 0;
+  animation: start-denyut 2.4s ease-in-out infinite;
+}
+
+.tombol-start-aplikasi:hover {
+  animation: none;
+  transform: scale(1.08);
+}
+
+/* 2. Tombol Mulai Game Hitung Jajan - Bisa diatur mandiri ukurannya */
+.tombol-start-hitung-jajan {
+  width: 360px;
+  height: 120px;
+  font-size: 32px;
+  padding: 0 0 4px 0;
+}
+
+/* 3. Tombol Mulai Game Balap Becak - Bisa diatur mandiri ukurannya */
+.tombol-start-balap-becak {
+  width: 360px;
+  height: 120px;
+  font-size: 32px;
+  padding: 0 0 4px 0;
 }
 
 @keyframes start-denyut {
@@ -675,19 +700,36 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0 6px 0;
+  /* padding: 0 0 6px 0; */
   cursor: pointer;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
-  transition: transform 0.18s ease, filter 0.18s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
+/* Animasi Hover Tombol Menu Ruang Belajar & Ruang Bermain */
 .tombol-kartu-utama:hover {
-  transform: translateY(-4px) scale(1.05);
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35)) brightness(1.08);
+  animation: animasi-hover-kartu-utama 1.2s ease-in-out infinite alternate;
+}
+
+.tombol-kartu-utama:hover .judul-kartu-utama {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 255, 255, 0.4);
 }
 
 .tombol-kartu-utama:active {
+  animation: none;
   transform: translateY(0) scale(0.97);
+}
+
+@keyframes animasi-hover-kartu-utama {
+  0% {
+    transform: translateY(-4px) scale(1.04);
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.32)) brightness(1.06);
+  }
+
+  100% {
+    transform: translateY(-12px) scale(1.08);
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.42)) brightness(1.14);
+  }
 }
 
 .judul-kartu-utama {
@@ -746,16 +788,45 @@ body {
   justify-content: center;
   width: auto;
   height: auto;
-  transition: transform 0.18s ease, filter 0.18s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.tombol-kartu-gambar:hover {
-  transform: translateY(-6px) scale(1.04);
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.28));
+/* Animasi Hover Menu Tabel Perkalian & Pembagian */
+#btn-ke-belajar-kali:hover {
+  animation: animasi-hover-tabel-kali 1.4s ease-in-out infinite alternate;
+}
+
+#btn-ke-belajar-bagi:hover {
+  animation: animasi-hover-tabel-bagi 1.4s ease-in-out infinite alternate;
 }
 
 .tombol-kartu-gambar:active {
-  transform: translateY(0) scale(0.97);
+  animation: none !important;
+  transform: translateY(0) scale(0.97) !important;
+}
+
+@keyframes animasi-hover-tabel-kali {
+  0% {
+    transform: translateY(-6px) scale(1.04) rotate(-2deg);
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.3));
+  }
+
+  100% {
+    transform: translateY(-14px) scale(1.09) rotate(2deg);
+    filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.4));
+  }
+}
+
+@keyframes animasi-hover-tabel-bagi {
+  0% {
+    transform: translateY(-6px) scale(1.04) rotate(2deg);
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.3));
+  }
+
+  100% {
+    transform: translateY(-14px) scale(1.09) rotate(-2deg);
+    filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.4));
+  }
 }
 
 .tombol-kartu-gambar img {
@@ -795,18 +866,82 @@ body {
   padding: 18px;
   cursor: pointer;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.tombol-menu-kartu:hover {
-  transform: translateY(-6px) scale(1.04);
+/* Animasi Hover Tombol & Ikon Hitung Jajan dan Balap Becak */
+#btn-pilih-tebak-jajan:hover {
   background: #ffffff;
   border-color: var(--terakota);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+  animation: animasi-hover-kartu-jajan 1.4s ease-in-out infinite alternate;
+}
+
+#btn-pilih-tebak-jajan:hover .wadah-ikon-permainan img {
+  animation: animasi-hover-ikon-jajan 1s ease-in-out infinite;
+}
+
+#btn-pilih-balap-becak:hover {
+  background: #ffffff;
+  border-color: #2B6CB0;
+  animation: animasi-hover-kartu-balap 1.4s ease-in-out infinite alternate;
+}
+
+#btn-pilih-balap-becak:hover .wadah-ikon-permainan img {
+  animation: animasi-hover-ikon-balap 0.9s ease-in-out infinite alternate;
 }
 
 .tombol-menu-kartu:active {
-  transform: translateY(0) scale(0.97);
+  animation: none !important;
+  transform: translateY(0) scale(0.97) !important;
+}
+
+@keyframes animasi-hover-kartu-jajan {
+  0% {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.26);
+  }
+
+  100% {
+    transform: translateY(-12px) scale(1.06);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@keyframes animasi-hover-kartu-balap {
+  0% {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.26);
+  }
+
+  100% {
+    transform: translateY(-12px) scale(1.06);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@keyframes animasi-hover-ikon-jajan {
+  0%,
+  100% {
+    transform: scale(1.05) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(-3deg) translateY(-4px);
+  }
+
+  75% {
+    transform: scale(1.1) rotate(3deg) translateY(-4px);
+  }
+}
+
+@keyframes animasi-hover-ikon-balap {
+  0% {
+    transform: scale(1.05) translateX(0);
+  }
+
+  100% {
+    transform: scale(1.1) translateX(8px) translateY(-2px);
+  }
 }
 
 .wadah-ikon-permainan {

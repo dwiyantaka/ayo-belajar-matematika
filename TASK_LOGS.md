@@ -843,3 +843,34 @@ Catat satu entri per task. Format:
        - Pastikan timer ronde berada di tengah bilah atas.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Pemisahan Class Tombol Mulai & Animasi Hover Menu Utama/Bermain/Belajar — 2026-11-26
+- **Dibuat/diubah:**
+  - `index.html`:
+    - Menambahkan class mandiri `.tombol-start-aplikasi` pada `#btn-start` di bumper.
+    - Menambahkan class mandiri `.tombol-start-hitung-jajan` dan menghapus inline style pada `#btn-mulai-tebak`.
+    - Menambahkan class mandiri `.tombol-start-balap-becak` dan menghapus inline style pada `#btn-mulai-balap-becak`.
+  - `css/style.css`:
+    - Memisahkan definisi dimensi dan ukuran masing-masing tombol mulai:
+      - `.tombol-start`: kelas dasar untuk latar gambar tombol, filter bayangan, kursor, dan transisi.
+      - `.tombol-start-aplikasi`: ukuran mandiri tombol mulai aplikasi bumper (`width: 380px; height: 130px; font-size: 38px;`) dengan animasi denyut idle.
+      - `.tombol-start-hitung-jajan`: ukuran mandiri tombol mulai Hitung Jajan (`width: 360px; height: 120px; font-size: 32px;`).
+      - `.tombol-start-balap-becak`: ukuran mandiri tombol mulai Balap Becak (`width: 360px; height: 120px; font-size: 32px;`).
+    - Menambahkan animasi `@keyframes` saat hover:
+      - `.tombol-kartu-utama:hover` (`#menu-btn-belajar` & `#menu-btn-main`): animasi mengapung dinamis (`@keyframes animasi-hover-kartu-utama`) dan efek kilau teks.
+      - Menu Tabel Perkalian & Pembagian (`#btn-ke-belajar-kali:hover` & `#btn-ke-belajar-bagi:hover`): animasi melayang dengan rotasi ceria (`@keyframes animasi-hover-tabel-kali` & `animasi-hover-tabel-bagi`).
+      - Tombol & Ikon Ruang Bermain (`#btn-pilih-tebak-jajan` & `#btn-pilih-balap-becak`): animasi kartu terangkat (`@keyframes animasi-hover-kartu-jajan` & `animasi-hover-kartu-balap`) serta animasi gerak ikon di dalamnya (`animasi-hover-ikon-jajan` berayun ceria, `animasi-hover-ikon-balap` bersiap melesat balapan).
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada, audio 2/6, soal valid 30/30.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html`:
+    1. Periksa ukuran tombol mulai pada Layar Bumper, Layar Pilih Level Hitung Jajan, dan Layar Persiapan Balap Becak; pastikan ukuran masing-masing tombol proporsional dan dapat diubah lewat class CSS mandirinya.
+    2. Pada Menu Utama: arahkan kursor (hover) ke tombol **Ruang Belajar** dan **Ruang Bermain**, pastikan animasi mengapung halus dan menarik berjalan.
+    3. Pada Ruang Belajar: arahkan kursor (hover) ke tombol **Tabel Perkalian** dan **Tabel Pembagian**, pastikan animasi hover melayang dan bergoyang berjalan.
+    4. Pada Ruang Bermain: arahkan kursor (hover) ke tombol kartu **Hitung Jajan** dan **Balap Becak**, pastikan kartu terangkat dan gambar ikon di dalamnya bergerak atraktif.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
