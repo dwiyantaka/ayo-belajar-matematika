@@ -167,7 +167,8 @@
             </div>
             <div class="panduan-menu-baris">
               <span class="panduan-menu-titik"></span>
-              <p>Sedangkan <b>Ruang Bermain</b> berisi 2 pilihan permainan, yaitu <b>Hitung Jajan</b> dan <b>Balap Becak</b> yang seru untuk dimainkan.</p>
+              <p>Sedangkan <b>Ruang Bermain</b> berisi 2 pilihan permainan, yaitu <b>Hitung Jajan</b> dan <b>Balap
+                  Becak</b> yang seru untuk dimainkan.</p>
             </div>
           </div>
 
@@ -499,14 +500,14 @@
       <div class="hud-balapan-atas">
         <div class="hud-pemain p1">
           <span class="nama" id="balap-hud-nama-p1">Pemain 1</span>
-          <span class="posisi" id="balap-hud-posisi-p1">0 / 10</span>
-          <span class="kontrol-badge">Tombol: [Z] kiri &nbsp; [X] kanan</span>
+          <!-- <span class="posisi" id="balap-hud-posisi-p1">0 / 10</span>
+          <span class="kontrol-badge">Tombol: [Z] kiri &nbsp; [X] kanan</span> -->
         </div>
         <div class="timer-ronde-badge" id="balap-timer-ronde">15s</div>
         <div class="hud-pemain p2">
           <span class="nama" id="balap-hud-nama-p2">Pemain 2</span>
-          <span class="posisi" id="balap-hud-posisi-p2">0 / 10</span>
-          <span class="kontrol-badge">Tombol: [.] kiri &nbsp; [/] kanan</span>
+          <!-- <span class="posisi" id="balap-hud-posisi-p2">0 / 10</span>
+          <span class="kontrol-badge">Tombol: [.] kiri &nbsp; [/] kanan</span> -->
         </div>
       </div>
 
@@ -516,30 +517,30 @@
         <div class="lajur-rel" id="lajur-p1">
           <div class="garis-start-visual">START</div>
           <div class="petak-lintasan-wadah" id="petak-wadah-p1"></div>
-          <div class="garis-finis-visual">FINIS</div>
+          <div class="garis-finis-visual">FINISH</div>
           <div class="becak-kendaraan p1" id="becak-p1"></div>
         </div>
         <!-- Lajur 2 (Bawah) -->
         <div class="lajur-rel" id="lajur-p2">
           <div class="garis-start-visual">START</div>
           <div class="petak-lintasan-wadah" id="petak-wadah-p2"></div>
-          <div class="garis-finis-visual">FINIS</div>
+          <div class="garis-finis-visual">FINISH</div>
           <div class="becak-kendaraan p2" id="becak-p2"></div>
         </div>
       </div>
 
       <!-- Area Soal Simbol & 2 Tombol Pilihan (Kiri & Kanan) -->
       <div class="area-soal-balapan">
-        <div class="kotak-simbol-balap" id="balap-simbol-soal">7 × 8</div>
+        <div class="kotak-simbol-balap" id="balap-simbol-soal">7 × 8 = ?</div>
         <div class="wadah-dua-pilihan-balap">
           <!-- Tombol Jawaban Kiri -->
           <div class="kartu-jawaban-balap" id="kartu-pilihan-kiri">
-            <div class="label-kunci-atas">P1: [Z] &nbsp;|&nbsp; P2: [.]</div>
+            <!-- <div class="label-kunci-atas">P1: [Z] &nbsp;|&nbsp; P2: [.]</div> -->
             <div class="teks-jawaban-balap" id="balap-teks-kiri">56</div>
           </div>
           <!-- Tombol Jawaban Kanan -->
           <div class="kartu-jawaban-balap" id="kartu-pilihan-kanan">
-            <div class="label-kunci-atas">P1: [X] &nbsp;|&nbsp; P2: [/]</div>
+            <!-- <div class="label-kunci-atas">P1: [X] &nbsp;|&nbsp; P2: [/]</div> -->
             <div class="teks-jawaban-balap" id="balap-teks-kanan">48</div>
           </div>
         </div>
@@ -581,13 +582,13 @@
 
     <!-- 6. Layar Hasil Permainan (Tebak Jajan & Balap Becak) (layar-hasil) -->
     <section class="layar" id="layar-hasil" hidden>
-      <h1 class="judul-layar">Hasil Permainan</h1>
+      <h1 class="judul-layar" id="hasil-judul-utama">Hasil Permainan</h1>
       <div class="wadah-konten-statis"
         style="align-items: center; text-align: center; min-height: 480px; padding: 30px 40px;">
         <div id="wadah-piala-hasil" style="margin-bottom: 10px;"></div>
         <div style="font-size: 32px; font-weight: bold; color: var(--soga);" id="hasil-selamat-nama">Hebat!</div>
 
-        <div class="ringkasan-hasil-grid">
+        <div class="ringkasan-hasil-grid" id="hasil-ringkasan-grid">
           <div class="kotak-hasil">
             <span class="label">Total Skor</span>
             <span class="nilai" id="hasil-total-skor">0</span>

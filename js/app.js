@@ -127,6 +127,12 @@
         el.appendChild(window.Aset.img(p.kunci));
       }
     });
+
+    // 8. Ikon Piala pada Layar Hasil
+    var wadahPialaHasil = document.getElementById("wadah-piala-hasil");
+    if (wadahPialaHasil && !wadahPialaHasil.firstChild && window.Aset) {
+      wadahPialaHasil.appendChild(window.Aset.img("ui.piala"));
+    }
   }
 
   /* Perbarui Tampilan Ikon Speaker Global */

@@ -431,6 +431,20 @@
       if (window.Skor && window.Skor.simpanRiwayat) window.Skor.simpanRiwayat(entriTim);
     }
 
+    var elGrid = document.getElementById("hasil-ringkasan-grid");
+    if (elGrid) elGrid.hidden = false;
+    var elJudul = document.getElementById("hasil-judul-utama");
+    if (elJudul) elJudul.textContent = "Hasil Permainan";
+    var elNama = document.getElementById("hasil-selamat-nama");
+    if (elNama) elNama.classList.remove("teks-selamat-balap");
+    var wadahPiala = document.getElementById("wadah-piala-hasil");
+    if (wadahPiala) {
+      wadahPiala.hidden = false;
+      if (!wadahPiala.firstChild && window.Aset) {
+        wadahPiala.appendChild(window.Aset.img("ui.piala"));
+      }
+    }
+
     state.permainan = "tebak";
     window.Layar.tampil("hasil");
   }
@@ -443,15 +457,9 @@
     var p2Wadah = document.getElementById("petak-wadah-p2");
     if (p1Wadah) {
       while (p1Wadah.firstChild) p1Wadah.removeChild(p1Wadah.firstChild);
-      for (var i = 0; i < state.balap.targetPetak; i++) {
-        var g = document.createElement("div"); g.className = "petak-garis"; p1Wadah.appendChild(g);
-      }
     }
     if (p2Wadah) {
       while (p2Wadah.firstChild) p2Wadah.removeChild(p2Wadah.firstChild);
-      for (var j = 0; j < state.balap.targetPetak; j++) {
-        var g2 = document.createElement("div"); g2.className = "petak-garis"; p2Wadah.appendChild(g2);
-      }
     }
 
     var becak1 = document.getElementById("becak-p1");
@@ -528,7 +536,10 @@
     if (kKanan) kKanan.className = "kartu-jawaban-balap";
 
     var stRonde = document.getElementById("balap-status-ronde");
-    if (stRonde) stRonde.hidden = true;
+    if (stRonde) {
+      stRonde.hidden = true;
+      stRonde.className = "status-ronde-balap";
+    }
 
     // Generate soal via GeneratorSoal
     var s = window.GeneratorSoal.buat({
@@ -544,7 +555,13 @@
     state.balap.pilihanKanan = pil[1];
 
     var elSimbol = document.getElementById("balap-simbol-soal");
-    if (elSimbol) elSimbol.textContent = s.teks;
+    if (elSimbol) {
+      var teksSoal = s.teks;
+      if (teksSoal.indexOf("=?") < 0 && teksSoal.indexOf("=") < 0) {
+        teksSoal += " = ?";
+      }
+      elSimbol.textContent = teksSoal;
+    }
 
     var elKiri = document.getElementById("balap-teks-kiri");
     var elKanan = document.getElementById("balap-teks-kanan");
@@ -663,57 +680,61 @@
     var stRonde = document.getElementById("balap-status-ronde");
     var teksSt = document.getElementById("balap-teks-status-ronde");
     if (stRonde && teksSt) {
-      teksSt.textContent = "Waktu habis! Kunci: " + s.penjelasan;
+      teksSt.textContent = "⏰ Waktu Habis!";
+      stRonde.className = "status-ronde-balap pop-up-tengah";
       stRonde.hidden = false;
     }
 
+    // Durasi singkat 700ms lalu lanjut ronde berikutnya
     setTimeout(function () {
+      if (stRonde) {
+        stRonde.className = "status-ronde-balap";
+        stRonde.hidden = true;
+      }
       rondeBaruBalap();
-    }, 1200);
+    }, 700);
   }
 
   function selesaiBalapBecak() {
     window.Aset.putar("sfx.menang");
     var durasi = Math.round((Date.now() - (state.balap.waktuMulai || Date.now())) / 1000);
+    var elJudul = document.getElementById("hasil-judul-utama");
     var elNama = document.getElementById("hasil-selamat-nama");
-    var elTotal = document.getElementById("hasil-total-skor");
-    var elRekap = document.getElementById("hasil-jumlah-benar");
+    var elGrid = document.getElementById("hasil-ringkasan-grid");
     var wadahSulit = document.getElementById("hasil-wadah-sulit");
-    var daftarSulit = document.getElementById("hasil-daftar-sulit");
+    var wadahPiala = document.getElementById("wadah-piala-hasil");
 
     var pemenang = "";
     if (state.balap.posisiP1 >= state.balap.targetPetak && state.balap.posisiP2 >= state.balap.targetPetak) {
-      pemenang = "Balapan Seri! (" + state.balap.namaP1 + " & " + state.balap.namaP2 + ")";
+      pemenang = "Balapan Seri!";
     } else if (state.balap.posisiP1 >= state.balap.targetPetak) {
       pemenang = "Selamat, " + state.balap.namaP1 + " Juara 1!";
     } else {
       pemenang = "Selamat, " + state.balap.namaP2 + " Juara 1!";
     }
 
-    if (elNama) elNama.textContent = pemenang;
-    if (elTotal) elTotal.textContent = Math.max(state.balap.posisiP1, state.balap.posisiP2) + " Petak";
+    if (elJudul) elJudul.textContent = "Juara Balap Becak!";
 
-    var rekapBalap = state.balap.namaP1 + ": " + state.balap.benarP1 + " benar | " + state.balap.namaP2 + ": " + state.balap.benarP2 + " benar";
-    if (elRekap) elRekap.textContent = rekapBalap;
-
-    // Fakta yang sering salah
-    if (wadahSulit && daftarSulit) {
-      while (daftarSulit.firstChild) daftarSulit.removeChild(daftarSulit.firstChild);
-      var unikSalah = Array.from(new Set(state.balap.faktaSalah));
-      if (unikSalah.length > 0) {
-        wadahSulit.hidden = false;
-        unikSalah.slice(0, 8).forEach(function (f) {
-          var chip = document.createElement("div");
-          chip.className = "chip-fakta";
-          chip.textContent = f;
-          daftarSulit.appendChild(chip);
-        });
-      } else {
-        wadahSulit.hidden = true;
+    // Tambahkan ikon piala di atas teks selamat
+    if (wadahPiala) {
+      wadahPiala.hidden = false;
+      if (!wadahPiala.firstChild && window.Aset) {
+        wadahPiala.appendChild(window.Aset.img("ui.piala"));
       }
     }
 
+    // Perbesar teks Selamat dst
+    if (elNama) {
+      elNama.textContent = pemenang;
+      elNama.classList.add("teks-selamat-balap");
+    }
+
+    // Pada halaman menang balap becak, buang total skor dan pencapaian/rekap
+    if (elGrid) elGrid.hidden = true;
+    if (wadahSulit) wadahSulit.hidden = true;
+
     // Catat riwayat skor
+    var rekapBalap = state.balap.namaP1 + ": " + state.balap.benarP1 + " benar | " + state.balap.namaP2 + ": " + state.balap.benarP2 + " benar";
     var entri = {
       pemain: pemenang,
       kelompok: rekapBalap,

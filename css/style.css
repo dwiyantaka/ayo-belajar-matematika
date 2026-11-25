@@ -335,11 +335,11 @@ body {
 /* Logo Institusi (UNY) di Pojok Kiri Atas Layar Bumper */
 .bumper-logo-instansi {
   position: absolute;
-  top: 20px;
+  top: 40px;
   left: 25px;
   z-index: 10;
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   background: var(--teks-terang);
   border-radius: 50%;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
@@ -359,8 +359,8 @@ body {
 }
 
 .bumper-logo-instansi img {
-  width: 74px;
-  height: 74px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   display: block;
 }
@@ -2042,8 +2042,10 @@ body {
 }
 
 .timer-ronde-badge {
-  background: var(--soga);
-  color: var(--kuning);
+  background: #800000;
+  /* var(--merah); */
+  color: white;
+  /* var(--kuning); */
   font-family: var(--font-judul);
   font-size: 28px;
   font-weight: bold;
@@ -2054,36 +2056,51 @@ body {
   text-align: center;
 }
 
-/* Lintasan 2 Lajur */
+/* Lintasan 2 Lajur (Desain Jalan Raya Realistis) */
 .lintasan-balapan-wadah {
   width: 1220px;
   margin: 0 auto;
-  background: #E2D4B7;
+  background: #4A4744;
   border: 4px solid var(--soga);
   border-radius: 18px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .lajur-rel {
   position: relative;
-  height: 90px;
-  background: #F5ECDC;
-  border: 2px solid var(--soga);
-  border-radius: 12px;
+  height: 92px;
+  background: #333230;
+  border: 2px solid #222120;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Garis Putus-putus Marka Jalan (- - - - -) */
+.lajur-rel::before {
+  content: "";
+  position: absolute;
+  left: 70px;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  background: repeating-linear-gradient(90deg, #FFFFFF, #FFFFFF 28px, transparent 28px, transparent 52px);
+  z-index: 1;
+  opacity: 0.9;
 }
 
 .garis-start-visual {
   width: 70px;
   height: 100%;
-  background: repeating-linear-gradient(45deg, #2F5233, #2F5233 10px, #F0CD66 10px, #F0CD66 20px);
-  color: #ffffff;
+  background: repeating-linear-gradient(90deg, #FFFFFF, #FFFFFF 10px, #333230 10px, #333230 20px);
+  color: var(--soga);
   font-family: var(--font-judul);
   font-size: 16px;
   font-weight: bold;
@@ -2092,12 +2109,13 @@ body {
   justify-content: center;
   border-right: 3px solid var(--soga);
   z-index: 2;
+  text-shadow: 0 1px 2px #FFFFFF;
 }
 
 .garis-finis-visual {
   width: 70px;
   height: 100%;
-  background: repeating-linear-gradient(45deg, #000000, #000000 10px, #ffffff 10px, #ffffff 20px);
+  background: repeating-linear-gradient(45deg, #111111, #111111 8px, #FFFFFF 8px, #FFFFFF 16px);
   color: var(--soga);
   font-family: var(--font-judul);
   font-size: 16px;
@@ -2108,21 +2126,15 @@ body {
   border-left: 3px solid var(--soga);
   z-index: 2;
   margin-left: auto;
+  text-shadow: 0 1px 2px #FFFFFF;
 }
 
 .petak-lintasan-wadah {
-  position: absolute;
-  left: 70px;
-  right: 70px;
-  top: 0;
-  bottom: 0;
-  display: flex;
+  display: none;
 }
 
 .petak-garis {
-  flex: 1;
-  border-right: 1px dashed rgba(107, 63, 29, 0.4);
-  height: 100%;
+  display: none;
 }
 
 .becak-kendaraan {
@@ -2232,6 +2244,40 @@ body {
   font-weight: bold;
   z-index: 100;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s ease;
+}
+
+/* Pop up Waktu Habis Balap Becak di Tengah Layar */
+.status-ronde-balap.pop-up-tengah {
+  bottom: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--terakota);
+  color: var(--teks-terang);
+  border: 4px solid var(--kuning);
+  font-size: 34px;
+  padding: 18px 45px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  pointer-events: none;
+  animation: pop-muncul-tengah 0.15s ease-out;
+}
+
+@keyframes pop-muncul-tengah {
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Teks Selamat Pemenang Balap Becak (Diperbesar) */
+.teks-selamat-balap {
+  font-family: var(--font-judul) !important;
+  font-size: 52px !important;
+  color: var(--soga) !important;
+  line-height: 1.25 !important;
+  margin: 15px 0 25px 0 !important;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 /* Checkbox Tabel Balap Setup */

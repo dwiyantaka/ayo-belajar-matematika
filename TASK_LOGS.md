@@ -765,3 +765,33 @@ Catat satu entri per task. Format:
   - Periksa layar bumper (halaman awal): pastikan logo UNY tampil di pojok kiri atas dalam wadah lingkaran putih dengan bayangan (shadow) yang rapi dan elegan.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+---
+
+## Perbaikan & Perubahan Permainan Balap Becak — 2026-11-25
+- **Dibuat/diubah:**
+  - `css/style.css`:
+    - Mengubah tampilan lintasan balap becak menjadi jalan raya beraspal realistis (`background: #333230;`) dengan marka garis putih putus-putus (`- - - - -`) di tengah lajur menggunakan `repeating-linear-gradient`.
+    - Menghilangkan garis pembatas balok/langkah vertikal (`.petak-lintasan-wadah { display: none; }`).
+    - Menambahkan pop-up notifikasi "Waktu Habis!" di tengah layar (`.status-ronde-balap.pop-up-tengah`) dengan animasi pop dan warna tegas (`--terakota`).
+    - Menambahkan styling `.teks-selamat-balap` (`font-size: 52px; font-family: var(--font-judul);`) untuk memperbesar ucapan selamat pemenang.
+  - `index.html`:
+    - Mengubah tampilan awal teks simbol soal balapan menjadi `7 × 8 = ?`.
+    - Menambahkan `id="hasil-ringkasan-grid"` pada kontainer ringkasan hasil permainan.
+  - `js/game.js`:
+    - Menambahkan format ` = ?` pada setiap teks soal operasi matematika balap becak (contoh: `5 × 4 = ?`).
+    - Menghapus pembuatan elemen garis balok/petak vertikal di `renderLintasanBalap()`.
+    - Memperbarui `waktuHabisRonde()` agar pop-up "⏰ Waktu Habis!" muncul tepat di tengah layar dengan durasi singkat (700 ms).
+    - Memperbarui `selesaiBalapBecak()`: memunculkan ikon piala (`ui.piala`) di atas teks selamat, memperbesar teks selamat pemenang via kelas `.teks-selamat-balap`, serta menyembunyikan kotak Total Skor dan Pencapaian/Rekap di layar kemenangan balap becak.
+  - `js/app.js`: menambahkan inisialisasi awal aset piala (`ui.piala`) pada `#wadah-piala-hasil`.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada dan soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html` dan mainkan mode **Balap Becak**:
+    1. Pastikan lintasan balap becak tampil selayaknya jalan raya aspal dengan marka garis putih putus-putus tanpa sekat kotak/balok langkah.
+    2. Periksa soal balapan di kotak tengah: pastikan operasi disertai ` = ?` (contoh: `5 × 4 = ?`).
+    3. Biarkan waktu habis: pastikan pop-up "⏰ Waktu Habis!" muncul di tengah layar dan berganti ronde secara singkat (700ms).
+    4. Selesaikan balapan sampai ada yang finis: pastikan di layar kemenangan tampil ikon piala di atas teks ucapan selamat juara 1 yang berukuran besar, serta kotak total skor dan pencapaian/rekap sudah dihilangkan.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
