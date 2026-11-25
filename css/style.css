@@ -203,13 +203,15 @@ body {
   transform: scale(0.95);
 }
 
-#ikon-wadah-kembali {
+#ikon-wadah-kembali,
+#ikon-wadah-ke-menu {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-#ikon-wadah-kembali img {
+#ikon-wadah-kembali img,
+#ikon-wadah-ke-menu img {
   width: 58px;
   height: 58px;
   object-fit: contain;

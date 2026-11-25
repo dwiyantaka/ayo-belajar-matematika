@@ -48,10 +48,17 @@
     }
   }
 
-  function perbaruiVisibilitas(namaLayar) {
+  function perbaruiVisibilitas(namaLayar, asal) {
     if (!btnTrigger) return;
-    // Sembunyikan menu hamburger di layar bumper
-    btnTrigger.hidden = (namaLayar === "bumper");
+    if (asal === undefined && window.Layar && window.Layar.ambilAsal) {
+      asal = window.Layar.ambilAsal(namaLayar);
+    }
+    var viaBumper = (asal === "onboarding" || asal === "bumper");
+    // Sembunyikan menu hamburger di layar bumper, serta layar panduan & tujuan jika diakses via bumper
+    var sembunyikan = (namaLayar === "bumper") ||
+      ((namaLayar === "panduan" || namaLayar === "tujuan") && viaBumper);
+
+    btnTrigger.hidden = sembunyikan;
     tutupPanel(); // Tutup panel jika layar berpindah
   }
 
@@ -128,7 +135,7 @@
 
     // Event pergantian layar
     window.addEventListener("gantilayar", function (e) {
-      perbaruiVisibilitas(e.detail.nama);
+      perbaruiVisibilitas(e.detail.nama, e.detail.asal);
     });
 
     // Pemasangan aksi tombol-tombol di dalam panel hamburger

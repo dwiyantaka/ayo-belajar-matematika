@@ -903,3 +903,35 @@ Catat satu entri per task. Format:
     3. Periksa **Piala**: pastikan ikon piala di atas teks ucapan bergoyang ceria dengan efek animasi yang hidup.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Flag Akses Bumper vs Menu & Tombol Kembali ke Menu Utama (Ikon Rumah) — 2026-11-26
+- **Dibuat/diubah:**
+  - `index.html`:
+    - Memasang tombol kembali ke menu utama `#btn-ke-menu` di sebelah kanan `#btn-kembali` dalam kontainer `#nav-global` dengan wadah gambar `#ikon-wadah-ke-menu`.
+  - `js/layar.js`:
+    - Menambahkan property `viaBumper` pada payload event `gantilayar`.
+    - Menambahkan method pembantu `window.Layar.isAksesBumper(nama)` untuk mengecek apakah halaman diakses via bumper/onboarding atau via menu.
+  - `js/app.js`:
+    - Menambahkan pemuatan gambar `ui.ikon-rumah` (`assets/img/ui/ikon-rumah.webp`) pada `#ikon-wadah-ke-menu`.
+    - Memperbarui `sesuaikanLayarDinamis`:
+      - Mengecualikan kemunculan menu lainnya (menu hamburger dan bilah suara global) pada layar panduan dan tujuan pembelajaran apabila diakses melalui bumper (`asal === "onboarding" || asal === "bumper"`). Jika diakses melalui menu, menu hamburger tetap dapat diakses.
+      - Menampilkan bilah navigasi global `#nav-global` (tombol kembali dan tombol menu utama) pada seluruh halaman selain bumper, panduan aplikasi, tujuan pembelajaran, dan menu utama.
+  - `js/menu-hamburger.js`:
+    - Memperbarui fungsi `perbaruiVisibilitas(namaLayar, asal)` dan listener `gantilayar` agar tombol hamburger otomatis tersembunyi pada layar bumper, serta pada layar panduan & tujuan jika diakses melalui alur bumper.
+  - `css/style.css`:
+    - Menambahkan styling `#ikon-wadah-ke-menu` sejajar dan serupa dengan `#ikon-wadah-kembali` (`width: 58px; height: 58px;`).
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada, audio 2/6, soal valid 30/30.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html`:
+    1. Pada layar awal (Bumper), klik tombol **MULAI**: masuk ke layar Panduan Aplikasi via bumper. Pastikan tombol menu hamburger di pojok kanan atas **tidak muncul**.
+    2. Klik **Lanjut** ke Tujuan Pembelajaran via bumper. Pastikan tombol menu hamburger tetap **tidak muncul**.
+    3. Klik **Mulai Belajar** untuk masuk ke Menu Utama. Pastikan tombol menu hamburger kini muncul di pojok kanan atas.
+    4. Buka menu hamburger, lalu klik **Panduan Aplikasi** atau **Tujuan Pembelajaran** (diakses via menu). Pastikan tombol menu hamburger **tetap muncul** karena diakses melalui menu.
+    5. Masuk ke ruang manapun (misal: Ruang Belajar, Tabel Perkalian, Ruang Bermain, Hitung Jajan, Balap Becak, Profil, dll): pastikan di pojok kiri atas terdapat 2 tombol berdampingan: tombol Kembali (panah) dan tombol Rumah (`assets/img/ui/ikon-rumah.webp`) yang langsung membawa kembali ke Menu Utama.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

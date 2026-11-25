@@ -33,10 +33,14 @@
       elTiraiKanan.appendChild(window.Aset.img("ornamen.tirai-kanan"));
     }
 
-    // 2. Ikon Navigasi (Kembali & Speaker)
+    // 2. Ikon Navigasi (Kembali, Ke Menu & Speaker)
     var wadahKembali = document.getElementById("ikon-wadah-kembali");
     if (wadahKembali && !wadahKembali.firstChild) {
       wadahKembali.appendChild(window.Aset.img("ui.ikon-kembali"));
+    }
+    var wadahKeMenu = document.getElementById("ikon-wadah-ke-menu");
+    if (wadahKeMenu && !wadahKeMenu.firstChild) {
+      wadahKeMenu.appendChild(window.Aset.img("ui.ikon-rumah"));
     }
     perbaruiIkonSpeaker();
 
@@ -474,10 +478,14 @@
     }
 
     // Visibilitas Bilah Navigasi Global (Pojok Kiri Atas), Speaker Global & Hamburger (Pojok Kanan Atas), dan Border Batik
-    // Menu hamburger dapat diakses oleh semua halaman kecuali Bumper
+    // Pengecualian: menu hamburger (menu lainnya) disembunyikan pada bumper dan panduan/tujuan jika diakses via bumper
+    var viaBumper = (asal === "onboarding" || asal === "bumper");
+    var sembunyikanMenuLainnya = (namaLayar === "bumper") ||
+      ((namaLayar === "panduan" || namaLayar === "tujuan") && viaBumper);
+
     var bilahSuara = document.getElementById("bilah-suara-global");
     if (bilahSuara) {
-      bilahSuara.hidden = (namaLayar === "bumper");
+      bilahSuara.hidden = sembunyikanMenuLainnya;
     }
 
     var elBorderAtas = document.getElementById("border-atas");
@@ -486,14 +494,17 @@
     if (elBorderBawah) elBorderBawah.hidden = (namaLayar === "bumper");
 
     if (!navGlobal) return;
-    if (namaLayar === "bumper" || namaLayar === "nama" || namaLayar === "menu" || asal === "onboarding") {
-      navGlobal.hidden = true;
-    } else {
-      navGlobal.hidden = false;
-      var btnKeMenu = document.getElementById("btn-ke-menu");
-      if (btnKeMenu) {
-        btnKeMenu.hidden = false;
-      }
+    // Tombol kembali & ke menu muncul di halaman selain bumper, panduan aplikasi, tujuan pembelajaran, dan menu utama
+    var janganTampilNav = (namaLayar === "bumper" ||
+      namaLayar === "panduan" ||
+      namaLayar === "tujuan" ||
+      namaLayar === "menu" ||
+      namaLayar === "nama");
+
+    navGlobal.hidden = janganTampilNav;
+    var btnKeMenu = document.getElementById("btn-ke-menu");
+    if (btnKeMenu) {
+      btnKeMenu.hidden = false;
     }
   }
 

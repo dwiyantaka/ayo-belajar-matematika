@@ -46,10 +46,14 @@
         target.hidden = false;
         layarSekarang = nama;
 
+        var asalAktif = parameterAsal[nama] || "menu";
+        var isViaBumper = (asalAktif === "onboarding" || asalAktif === "bumper");
+
         /* Event kustom saat layar berganti */
         var detailEvent = {
           nama: nama,
-          asal: parameterAsal[nama] || "menu"
+          asal: asalAktif,
+          viaBumper: isViaBumper
         };
         var ev = new CustomEvent("gantilayar", { detail: detailEvent });
         window.dispatchEvent(ev);
@@ -61,6 +65,12 @@
     /* Mendapatkan mode asal dari layar saat ini */
     ambilAsal: function (nama) {
       return parameterAsal[nama || layarSekarang] || "menu";
+    },
+
+    /* Mengecek apakah layar diakses melalui alur bumper (onboarding) */
+    isAksesBumper: function (nama) {
+      var asal = parameterAsal[nama || layarSekarang];
+      return (asal === "onboarding" || asal === "bumper");
     },
 
     /* Kembali ke layar sebelumnya di riwayat */
