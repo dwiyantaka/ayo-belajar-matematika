@@ -2021,7 +2021,7 @@ body {
   font-family: var(--font-judul);
   font-size: 22px;
   font-weight: bold;
-  color: var(--soga);
+  color: var(--hijau-tua);
 }
 
 .hud-pemain .posisi {
@@ -2047,7 +2047,7 @@ body {
   color: white;
   /* var(--kuning); */
   font-family: var(--font-judul);
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
   padding: 8px 20px;
   border-radius: 16px;
@@ -2266,8 +2266,15 @@ body {
 }
 
 @keyframes pop-muncul-tengah {
-  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 /* Teks Selamat Pemenang Balap Becak (Diperbesar) */

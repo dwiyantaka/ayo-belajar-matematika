@@ -795,3 +795,16 @@ Catat satu entri per task. Format:
     4. Selesaikan balapan sampai ada yang finis: pastikan di layar kemenangan tampil ikon piala di atas teks ucapan selamat juara 1 yang berukuran besar, serta kotak total skor dan pencapaian/rekap sudah dihilangkan.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+---
+
+## Duplikasi Ilustrasi Soal J-01.png hingga J-30.png — 2026-11-26
+- **Dibuat/diubah:**
+  - `assets/ilustrasi-soal/`: menduplikasi berkas `J-01.png` sebanyak 29 kali menjadi `J-02.png` sampai dengan `J-30.png` agar seluruh 30 soal di `js/soal.js` memiliki berkas ilustrasi yang sesuai.
+- **Verifikasi:**
+  - `ls -la assets/ilustrasi-soal/`: 30 berkas `J-01.png` s.d. `J-30.png` tersedia lengkap.
+  - `node tools/cek-aset.mjs`: seluruh 30 soal tervalidasi dan valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka kuis Hitung Jajan di `index.html` dan pastikan ilustrasi soal muncul tanpa galat berkas hilang.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
