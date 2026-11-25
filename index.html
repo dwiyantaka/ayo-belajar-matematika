@@ -576,18 +576,21 @@
 
     <!-- 6. Layar Hasil Permainan (Tebak Jajan & Balap Becak) (layar-hasil) -->
     <section class="layar" id="layar-hasil" hidden>
+      <!-- Kanvas Animasi Confetti Layar Penuh -->
+      <canvas id="kanvas-confetti" class="kanvas-confetti" width="1366" height="768"></canvas>
+
       <h1 class="judul-layar" id="hasil-judul-utama">Hasil Permainan</h1>
       <div class="wadah-konten-statis"
-        style="align-items: center; text-align: center; min-height: 480px; padding: 30px 40px;">
+        style="align-items: center; text-align: center; min-height: 480px; padding: 30px 40px; position: relative; z-index: 2;">
         <div id="wadah-piala-hasil" style="margin-bottom: 10px;"></div>
         <div style="font-size: 32px; font-weight: bold; color: var(--soga);" id="hasil-selamat-nama">Hebat!</div>
 
         <div class="ringkasan-hasil-grid" id="hasil-ringkasan-grid">
-          <div class="kotak-hasil">
+          <div class="kotak-hasil" id="hasil-kotak-total">
             <span class="label">Total Skor</span>
             <span class="nilai" id="hasil-total-skor">0</span>
           </div>
-          <div class="kotak-hasil">
+          <div class="kotak-hasil" id="hasil-kotak-rekap" hidden>
             <span class="label">Pencapaian / Rekap</span>
             <span class="nilai" id="hasil-jumlah-benar" style="font-size: 30px;">0 / 10</span>
           </div>

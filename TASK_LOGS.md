@@ -874,3 +874,32 @@ Catat satu entri per task. Format:
     4. Pada Ruang Bermain: arahkan kursor (hover) ke tombol kartu **Hitung Jajan** dan **Balap Becak**, pastikan kartu terangkat dan gambar ikon di dalamnya bergerak atraktif.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Layar Hasil Hitung Jajan: Hilangkan Rekap, Animasi Confetti Layar Penuh & Animasi Piala Goyang — 2026-11-26
+- **Dibuat/diubah:**
+  - `index.html`:
+    - Menambahkan elemen kanvas confetti `<canvas id="kanvas-confetti" class="kanvas-confetti" width="1366" height="768"></canvas>` di `#layar-hasil`.
+    - Menambahkan ID `#hasil-kotak-total` dan `#hasil-kotak-rekap` dengan atribut `hidden` pada kotak pencapaian/rekap agar tersembunyi pada hasil permainan hitung jajan.
+  - `js/util.js`:
+    - Menambahkan modul `window.Confetti` (`mulai()` & `henti()`) dengan animasi partikel confetti berbasis Canvas 2D 60fps yang memenuhi seluruh layar (1366×768) dengan ragam bentuk dan palet warna perayaan meriah.
+  - `js/game.js`:
+    - Memastikan kotak pencapaian/rekap (`#hasil-kotak-rekap`) disembunyikan pada `selesaiTebakJajan()` sehingga hanya kotak Total Skor yang tampil di tengah.
+    - Menjalankan `window.Confetti.mulai()` saat layar hasil permainan dimunculkan di `selesaiTebakJajan()` dan `selesaiBalapBecak()`.
+  - `js/app.js`:
+    - Menghentikan dan membersihkan animasi confetti secara otomatis saat pengguna berpindah layar dari layar hasil (`e.detail.nama !== "hasil"`).
+  - `css/style.css`:
+    - Menambahkan kelas `.kanvas-confetti` dengan posisi absolut layar penuh dan `pointer-events: none` agar tidak menghalangi interaksi tombol.
+    - Menambahkan animasi `@keyframes piala-goyang` pada `#wadah-piala-hasil img` (animasi piala bergoyang/wobble ceria dan meriah saat hasil permainan muncul).
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada, audio 2/6, soal valid 30/30.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html`, mainkan kuis **Hitung Jajan** sampai selesai:
+    1. Periksa layar hasil permainan: pastikan kotak **Pencapaian / Rekap** sudah tidak ada, hanya menyisakan kotak **Total Skor** di tengah.
+    2. Periksa efek **Confetti**: pastikan partikel kertas warna-warni meluncur memenuhi seluruh layar secara halus dan meriah.
+    3. Periksa **Piala**: pastikan ikon piala di atas teks ucapan bergoyang ceria dengan efek animasi yang hidup.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

@@ -33,7 +33,7 @@ window.ASET_MANIFEST = (function () {
   g("ui.ikon-info", "ui/ikon-bantuan.webp", "Ikon ? (aturan)", "400x400");
   g("ui.ikon-funfact", "ui/ikon-info.webp", "Ikon i (fun fact)", "400x400");
   g("ui.ikon-dengar", "ui/ikon-dengar.svg", "Ikon dengarkan narasi", "128x128");
-  g("ui.piala", "ui/piala.svg", "Piala pemenang", "300x300");
+  g("ui.piala", "ui/piala.webp", "Piala pemenang", "300x300");
   g("ui.lencana", "ui/lencana.svg", "Lencana hadiah (opsional)", "200x200");
   g("ui.perkalian", "ui/perkalian.webp", "Menu perkalian", "558x657");
   g("ui.pembagian", "ui/pembagian.webp", "Menu pembagian", "558x657");

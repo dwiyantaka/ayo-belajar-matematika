@@ -507,6 +507,11 @@
       window.addEventListener("gantilayar", function (e) {
         sesuaikanLayarDinamis(e.detail.nama, e.detail.asal);
 
+        // Hentikan animasi confetti jika meninggalkan layar hasil
+        if (e.detail.nama !== "hasil" && window.Confetti && window.Confetti.henti) {
+          window.Confetti.henti();
+        }
+
         // Putar musik latar lembut setelah melewati bumper (misal di panduan, menu, bermain, dll)
         if (e.detail.nama !== "bumper") {
           window.Aset.putar("musik.latar");

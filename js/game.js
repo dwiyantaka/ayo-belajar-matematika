@@ -366,10 +366,10 @@
     var daftarSulit = document.getElementById("hasil-daftar-sulit");
 
     if (state.tebak.cara === "sendiri") {
-      var namaPemain = (window.PemainAktif && window.PemainAktif.nama) || "Siswa";
-      if (elNama) elNama.textContent = "Hebat, " + namaPemain + "!";
+      var namaPemain = (window.PemainAktif && window.PemainAktif.nama) || "";
+      if (elNama) elNama.textContent = "Kamu Hebat!";
       if (elTotal) elTotal.textContent = state.tebak.skorTotal;
-      if (elRekap) elRekap.textContent = state.tebak.jumlahBenar + " / " + state.tebak.daftarSoal.length;
+      // if (elRekap) elRekap.textContent = state.tebak.jumlahBenar + " / " + state.tebak.daftarSoal.length;
 
       var entri = {
         pemain: namaPemain,
@@ -433,6 +433,10 @@
 
     var elGrid = document.getElementById("hasil-ringkasan-grid");
     if (elGrid) elGrid.hidden = false;
+    var elKotakRekap = document.getElementById("hasil-kotak-rekap");
+    if (elKotakRekap) elKotakRekap.hidden = true;
+    var elKotakTotal = document.getElementById("hasil-kotak-total");
+    if (elKotakTotal) elKotakTotal.hidden = false;
     var elJudul = document.getElementById("hasil-judul-utama");
     if (elJudul) elJudul.textContent = "Hasil Permainan";
     var elNama = document.getElementById("hasil-selamat-nama");
@@ -447,6 +451,10 @@
 
     state.permainan = "tebak";
     window.Layar.tampil("hasil");
+
+    if (window.Confetti && window.Confetti.mulai) {
+      window.Confetti.mulai();
+    }
   }
 
   /* =========================================================================
@@ -753,6 +761,10 @@
 
     state.permainan = "balap";
     window.Layar.tampil("hasil");
+
+    if (window.Confetti && window.Confetti.mulai) {
+      window.Confetti.mulai();
+    }
   }
 
   /* =========================================================================

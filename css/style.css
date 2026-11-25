@@ -561,18 +561,18 @@ body {
 
 /* 2. Tombol Mulai Game Hitung Jajan - Bisa diatur mandiri ukurannya */
 .tombol-start-hitung-jajan {
-  width: 360px;
-  height: 120px;
+  width: 290px;
+  height: 140px;
   font-size: 32px;
-  padding: 0 0 4px 0;
+  padding: 0 0 2px 0;
 }
 
 /* 3. Tombol Mulai Game Balap Becak - Bisa diatur mandiri ukurannya */
 .tombol-start-balap-becak {
-  width: 360px;
-  height: 120px;
+  width: 290px;
+  height: 140px;
   font-size: 32px;
-  padding: 0 0 4px 0;
+  padding: 0 0 2px 0;
 }
 
 @keyframes start-denyut {
@@ -920,6 +920,7 @@ body {
 }
 
 @keyframes animasi-hover-ikon-jajan {
+
   0%,
   100% {
     transform: scale(1.05) rotate(0deg);
@@ -1772,10 +1773,54 @@ body {
   color: var(--soga);
 }
 
+/* Kanvas Animasi Confetti Layar Penuh */
+.kanvas-confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1366px;
+  height: 768px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#wadah-piala-hasil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 #wadah-piala-hasil img {
-  width: 140px;
-  height: 140px;
+  /* width: 140px; */
+  height: 110px;
   object-fit: contain;
+  transform-origin: bottom center;
+  animation: piala-goyang 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+}
+
+@keyframes piala-goyang {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  20% {
+    transform: rotate(-10deg) scale(1.08);
+  }
+
+  40% {
+    transform: rotate(8deg) scale(1.1);
+  }
+
+  60% {
+    transform: rotate(-6deg) scale(1.08);
+  }
+
+  80% {
+    transform: rotate(4deg) scale(1.04);
+  }
 }
 
 /* Ruang Belajar & Tabel 1–10 (Task T3) */
