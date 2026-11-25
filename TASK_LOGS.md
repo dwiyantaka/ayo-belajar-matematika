@@ -808,3 +808,38 @@ Catat satu entri per task. Format:
   - Buka kuis Hitung Jajan di `index.html` dan pastikan ilustrasi soal muncul tanpa galat berkas hilang.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Perbaikan Tampilan Bumper & Arena Balap Becak — 2026-11-26
+- **Dibuat/diubah:**
+  - `index.html`:
+    - Menambahkan atribut `hidden` pada `#bilah-suara-global` dan `#btn-hamburger` saat inisialisasi agar menu hamburger tersembunyi pada layar bumper.
+    - Menghapus teks "START" dan "FINISH" dari garis start dan finish di arena balap becak.
+    - Menghapus kotak nama pemain di bilah atas HUD balap becak sehingga bilah atas hanya memuat timer ronde di tengah.
+    - Memindahkan badge nama pemain (`#balap-hud-nama-p1` & `#balap-hud-nama-p2`) ke dalam kontainer becak di sebelah kiri gambar becak masing-masing lajur.
+  - `js/app.js`:
+    - Mengatur visibilitas `#bilah-suara-global` agar tersembunyi pada layar bumper (`namaLayar === "bumper"`).
+  - `js/menu-hamburger.js`:
+    - Mengatur fungsi `perbaruiVisibilitas()` agar tombol hamburger tersembunyi pada layar bumper (`btnTrigger.hidden = (namaLayar === "bumper")`).
+  - `js/game.js`:
+    - Memperbarui `renderLintasanBalap()` agar memuat gambar becak ke dalam wadah `#becak-img-p1` dan `#becak-img-p2`.
+    - Memperbarui perhitungan posisi pada `perbaruiPosisiBecakVisual()` dengan `startLeft = 75px` dan rentang gerak `maxOffset = 840px` agar pergerakan becak beserta badge nama di sebelah kirinya bergerak mulus dari start hingga finis.
+  - `css/style.css`:
+    - Memusatkan timer ronde di `.hud-balapan-atas` (`justify-content: center`).
+    - Menambahkan styling badge nama pemain di samping becak (`.nama-becak-badge`, `.nama-becak-badge.p1`, `.nama-becak-badge.p2`).
+    - Mengatur tata letak flex horizontal `.becak-kendaraan` yang menampung badge nama di kiri dan gambar becak di kanan.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada, audio 2/6, soal valid 30/30.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html`:
+    1. Pada layar awal (Bumper), pastikan tombol menu hamburger di pojok kanan atas tidak muncul/tersembunyi.
+    2. Masuk ke halaman Menu Utama atau layar lainnya, pastikan tombol menu hamburger muncul normal.
+    3. Masuk ke permainan Balap Becak:
+       - Pastikan tidak ada lagi teks "START" dan "FINISH" pada garis marka awal dan akhir lintasan.
+       - Pastikan nama pemain kini tampil di sebelah kiri masing-masing kendaraan becak (P1 terakota, P2 biru) dan ikut bergerak maju saat menjawab benar.
+       - Pastikan timer ronde berada di tengah bilah atas.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

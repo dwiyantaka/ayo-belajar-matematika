@@ -33,9 +33,9 @@
       </button> -->
     </div>
 
-    <!-- Kontrol Audio Global (Speaker) & Menu Hamburger (Aktif di semua halaman) -->
-    <div class="bilah-kontrol-global" id="bilah-suara-global">
-      <button type="button" class="tombol-ikon tombol-hamburger-trigger" id="btn-hamburger" title="Buka Menu">
+    <!-- Kontrol Audio Global (Speaker) & Menu Hamburger (Aktif di semua halaman kecuali Bumper) -->
+    <div class="bilah-kontrol-global" id="bilah-suara-global" hidden>
+      <button type="button" class="tombol-ikon tombol-hamburger-trigger" id="btn-hamburger" title="Buka Menu" hidden>
         <span id="ikon-wadah-hamburger"></span>
       </button>
       <!-- <button type="button" class="tombol-ikon" id="btn-speaker" title="Pengaturan Suara">
@@ -496,36 +496,32 @@
 
     <!-- 5. Layar Arena Balap Becak (layar-main-balap) -->
     <section class="layar" id="layar-main-balap" hidden>
-      <!-- Bilah Atas HUD Balapan -->
+      <!-- Bilah Atas HUD Balapan (Timer di tengah) -->
       <div class="hud-balapan-atas">
-        <div class="hud-pemain p1">
-          <span class="nama" id="balap-hud-nama-p1">Pemain 1</span>
-          <!-- <span class="posisi" id="balap-hud-posisi-p1">0 / 10</span>
-          <span class="kontrol-badge">Tombol: [Z] kiri &nbsp; [X] kanan</span> -->
-        </div>
         <div class="timer-ronde-badge" id="balap-timer-ronde">15s</div>
-        <div class="hud-pemain p2">
-          <span class="nama" id="balap-hud-nama-p2">Pemain 2</span>
-          <!-- <span class="posisi" id="balap-hud-posisi-p2">0 / 10</span>
-          <span class="kontrol-badge">Tombol: [.] kiri &nbsp; [/] kanan</span> -->
-        </div>
       </div>
 
       <!-- Lintasan Balapan 2 Lajur -->
       <div class="lintasan-balapan-wadah" id="balap-lintasan">
         <!-- Lajur 1 (Atas) -->
         <div class="lajur-rel" id="lajur-p1">
-          <div class="garis-start-visual">START</div>
+          <div class="garis-start-visual"></div>
           <div class="petak-lintasan-wadah" id="petak-wadah-p1"></div>
-          <div class="garis-finis-visual">FINISH</div>
-          <div class="becak-kendaraan p1" id="becak-p1"></div>
+          <div class="garis-finis-visual"></div>
+          <div class="becak-kendaraan p1" id="becak-p1">
+            <span class="nama-becak-badge p1" id="balap-hud-nama-p1">Pemain 1</span>
+            <span class="becak-img-wadah" id="becak-img-p1"></span>
+          </div>
         </div>
         <!-- Lajur 2 (Bawah) -->
         <div class="lajur-rel" id="lajur-p2">
-          <div class="garis-start-visual">START</div>
+          <div class="garis-start-visual"></div>
           <div class="petak-lintasan-wadah" id="petak-wadah-p2"></div>
-          <div class="garis-finis-visual">FINISH</div>
-          <div class="becak-kendaraan p2" id="becak-p2"></div>
+          <div class="garis-finis-visual"></div>
+          <div class="becak-kendaraan p2" id="becak-p2">
+            <span class="nama-becak-badge p2" id="balap-hud-nama-p2">Pemain 2</span>
+            <span class="becak-img-wadah" id="becak-img-p2"></span>
+          </div>
         </div>
       </div>
 

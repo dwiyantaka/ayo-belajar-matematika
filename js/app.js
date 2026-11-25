@@ -473,10 +473,10 @@
     }
 
     // Visibilitas Bilah Navigasi Global (Pojok Kiri Atas), Speaker Global & Hamburger (Pojok Kanan Atas), dan Border Batik
-    // Menu hamburger dapat diakses oleh semua halaman
+    // Menu hamburger dapat diakses oleh semua halaman kecuali Bumper
     var bilahSuara = document.getElementById("bilah-suara-global");
     if (bilahSuara) {
-      bilahSuara.hidden = false;
+      bilahSuara.hidden = (namaLayar === "bumper");
     }
 
     var elBorderAtas = document.getElementById("border-atas");

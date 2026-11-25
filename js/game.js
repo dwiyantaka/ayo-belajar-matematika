@@ -462,10 +462,10 @@
       while (p2Wadah.firstChild) p2Wadah.removeChild(p2Wadah.firstChild);
     }
 
-    var becak1 = document.getElementById("becak-p1");
+    var becak1 = document.getElementById("becak-img-p1") || document.getElementById("becak-p1");
     if (becak1 && !becak1.firstChild) becak1.appendChild(window.Aset.img("balap.becak1"));
 
-    var becak2 = document.getElementById("becak-p2");
+    var becak2 = document.getElementById("becak-img-p2") || document.getElementById("becak-p2");
     if (becak2 && !becak2.firstChild) becak2.appendChild(window.Aset.img("balap.becak2"));
 
     perbaruiPosisiBecakVisual();
@@ -480,13 +480,15 @@
     if (elPos1) elPos1.textContent = state.balap.posisiP1 + " / " + state.balap.targetPetak;
     if (elPos2) elPos2.textContent = state.balap.posisiP2 + " / " + state.balap.targetPetak;
 
-    // Hitung persentase offset (lebar lintasan dari start 70px s.d finis 70px = 1220 - 140 - 90 = 990px)
-    var maxOffset = 990;
+    // Hitung offset posisi (lebar lajur: 1192px, start: 70px, finis: 70px)
+    // Posisi awal becak di 75px, maju hingga finis
+    var startLeft = 75;
+    var maxOffset = 840;
     var fraction1 = Math.min(1, state.balap.posisiP1 / state.balap.targetPetak);
     var fraction2 = Math.min(1, state.balap.posisiP2 / state.balap.targetPetak);
 
-    if (b1) b1.style.left = (70 + (fraction1 * maxOffset)) + "px";
-    if (b2) b2.style.left = (70 + (fraction2 * maxOffset)) + "px";
+    if (b1) b1.style.left = (startLeft + (fraction1 * maxOffset)) + "px";
+    if (b2) b2.style.left = (startLeft + (fraction2 * maxOffset)) + "px";
   }
 
   function mulaiBalapBecak() {

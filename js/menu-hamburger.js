@@ -50,8 +50,8 @@
 
   function perbaruiVisibilitas(namaLayar) {
     if (!btnTrigger) return;
-    // Menu hamburger dapat diakses oleh semua halaman
-    btnTrigger.hidden = false;
+    // Sembunyikan menu hamburger di layar bumper
+    btnTrigger.hidden = (namaLayar === "bumper");
     tutupPanel(); // Tutup panel jika layar berpindah
   }
 
