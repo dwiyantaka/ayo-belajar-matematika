@@ -27,6 +27,8 @@ window.ASET_MANIFEST = (function () {
   g("ui.ikon-speaker-off", "ui/ikon-speaker-off.svg", "Ikon speaker mati", "128x128");
   g("ui.ikon-kembali", "ui/ikon-kembali.webp", "Ikon panah kembali", "128x128");
   g("ui.ikon-lanjut", "ui/ikon-lanjut.svg", "Ikon panah lanjut", "128x128");
+  g("ui.ikon-kiri", "ui/ikon-kiri.webp", "Ikon panah kiri", "128x128");
+  g("ui.ikon-kanan", "ui/ikon-kanan.webp", "Ikon panah kanan", "128x128");
   g("ui.ikon-info", "ui/ikon-bantuan.webp", "Ikon ? (aturan)", "400x400");
   g("ui.ikon-funfact", "ui/ikon-info.webp", "Ikon i (fun fact)", "400x400");
   g("ui.ikon-dengar", "ui/ikon-dengar.svg", "Ikon dengarkan narasi", "128x128");
@@ -129,7 +131,7 @@ window.ASET_MANIFEST = (function () {
   g("ui.tombol-kunci", "ui/tombol-kunci.svg", "Kotak label tombol keyboard", "96x96");
 
   return {
-    versi: 13,                                  /* naikkan setelah mengganti isi berkas */
+    versi: 14,                                  /* naikkan setelah mengganti isi berkas */
     gambar: G,
     audio: A,
     narasiFolder: "assets/audio/narasi/",       /* narasi per soal: <ID>.mp3, mis. P-03.mp3 */

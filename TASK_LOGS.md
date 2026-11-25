@@ -702,3 +702,28 @@ Catat satu entri per task. Format:
   - Sesuai permintaan pengguna, opsi pemilihan operasi (kali/bagi/campur) dan pemilihan tabel (1–10) di Balap Becak ditiadakan dari layar setup. Balap Becak langsung melatih seluruh fakta dasar perkalian dan pembagian 1–10 secara acak dan seimbang, sehingga setup menjadi ringkas (hanya input nama kedua pemain).
 
 ---
+
+---
+
+## Perbaikan & Perubahan — Akses Menu Hamburger & Navigasi Ikon Profil — 2026-11-25
+- **Dibuat/diubah:**
+  - `assets/manifest.js`: mendaftarkan `ui.ikon-kiri` (`assets/img/ui/ikon-kiri.webp`) dan `ui.ikon-kanan` (`assets/img/ui/ikon-kanan.webp`), menaikkan versi cache aset menjadi 14.
+  - `index.html`:
+    - Mengaktifkan menu hamburger di semua halaman (menghapus atribut `hidden` bawaan pada `#bilah-suara-global` dan `#btn-hamburger`).
+    - Mengubah tombol navigasi "Halaman 1" dan "Halaman 2" di layar profil pengembang menjadi tombol ikon navigasi kiri (`#btn-profil-kiri`) dan kanan (`#btn-profil-kanan`).
+  - `css/style.css`: menambahkan kelas gaya `.tombol-profil-nav` dengan target klik minimum 48px, efek hover, feedback active, serta status `disabled` (opacity dan cursor) untuk navigasi halaman profil.
+  - `js/menu-hamburger.js`: memperbarui fungsi `perbaruiVisibilitas()` agar tombol hamburger tetap aktif dan dapat dibuka di semua halaman/layar.
+  - `js/app.js`:
+    - Memasang gambar `ui.ikon-kiri` dan `ui.ikon-kanan` pada wadah ikon tombol navigasi profil.
+    - Menghubungkan logika navigasi halaman profil 1 dan 2 menggunakan tombol panah kiri dan kanan (status disabled otomatis di halaman awal/akhir dan reset ke halaman 1 saat layar profil dibuka).
+    - Memastikan bilah kontrol pojok kanan atas (`#bilah-suara-global`) selalu aktif di semua layar.
+- **Verifikasi:**
+  - `node -c js/*.js`: seluruh berkas JavaScript lolos pemeriksaan sintaks tanpa galat.
+  - `node tools/cek-aset.mjs`: gambar 98/98 terdaftar dan ada, 38 soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka `index.html` di peramban.
+  - Periksa tombol hamburger di pojok kanan atas: pastikan tampil dan dapat dibuka di semua layar (layar judul/bumper, onboarding, menu utama, ruang belajar, tabel materi, ruang bermain, balap becak, hingga profil).
+  - Buka layar "Profil Pengembang": pastikan tombol "Halaman 1" dan "Halaman 2" sudah berganti menjadi ikon panah kiri dan kanan (`assets/img/ui/ikon-kiri.webp` dan `assets/img/ui/ikon-kanan.webp`).
+  - Uji klik tombol panah kanan untuk berpindah ke profil halaman 2, dan klik tombol panah kiri untuk kembali ke halaman 1.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

@@ -33,9 +33,9 @@
       </button> -->
     </div>
 
-    <!-- Kontrol Audio Global (Speaker) & Menu Hamburger -->
-    <div class="bilah-kontrol-global" id="bilah-suara-global" hidden>
-      <button type="button" class="tombol-ikon tombol-hamburger-trigger" id="btn-hamburger" title="Buka Menu" hidden>
+    <!-- Kontrol Audio Global (Speaker) & Menu Hamburger (Aktif di semua halaman) -->
+    <div class="bilah-kontrol-global" id="bilah-suara-global">
+      <button type="button" class="tombol-ikon tombol-hamburger-trigger" id="btn-hamburger" title="Buka Menu">
         <span id="ikon-wadah-hamburger"></span>
       </button>
       <!-- <button type="button" class="tombol-ikon" id="btn-speaker" title="Pengaturan Suara">
@@ -134,7 +134,7 @@
     <section class="layar" id="layar-bumper" hidden>
       <div class="bumper-latar-wadah" id="wadah-bumper-latar"></div>
       <div class="bumper-logo-wadah" id="wadah-bumper-logo">
-        <h1 class="bumper-judul-teks">Ayo Belajar Matematika</h1>
+        <h1 class="bumper-judul-teks">Ayo Belajar<br>Matematika</h1>
       </div>
       <div class="bumper-makanan-trio" id="wadah-bumper-makanan"></div>
       <div class="tombol-start-wadah">
@@ -152,13 +152,13 @@
             <div><b>Mulai:</b> Masukkan nama dan pilih karakter favoritmu di awal permainan.</div>
           </div>
           <div class="panduan-item">
-            <div class="panduan-nomor">2</div>
-            <div><b>Ruang Belajar:</b> Pelajari tabel perkalian dan pembagian dasar 1–10.</div>
+            <!-- <div class="panduan-nomor">2</div> -->
+            <div><b>Ruang Belajar:</b> Berisi tabel perkalian dan pembagian dasar 1–10.</div>
           </div>
           <div class="panduan-item">
-            <div class="panduan-nomor">3</div>
-            <div><b>Ruang Bermain:</b> Pilih <b>Hitung Jajan</b> atau <b>Balap Becak</b> seru untuk 2
-              pemain!</div>
+            <div class="panduan-nomor">*</div>
+            <div><b>Ruang Bermain:</b> Dua pilihan permainan <b>Hitung Jajan</b> dan <b>Balap Becak</b> yang seru untuk
+              dimainkan!</div>
           </div>
           <div class="panduan-item">
             <div class="panduan-nomor">4</div>
@@ -185,8 +185,8 @@
       <h1 class="judul-layar">Tujuan Pembelajaran</h1>
       <div class="wadah-konten-statis">
         <div class="teks-tujuan">
-          "Setelah bermain, aku dapat menyelesaikan perkalian dan pembagian dengan fakta dasar 1–10 (hasil sampai 100)
-          menggunakan gambar dan simbol."
+          "Dengan bermain melalui multimedia interaktif berbasis <i> educational games </i> ini, kamu dapat menghitung
+          perkalian dan pembagian dasar 1 sampai 10 dengan baik.
         </div>
 
         <!-- Tombol Aksi Tujuan (Dinamis: Onboarding / Menu) -->
@@ -374,7 +374,7 @@
 
         <div style="margin-top: 25px;">
           <button type="button" class="tombol-start" id="btn-mulai-tebak"
-            style="font-size: 32px; padding: 14px 60px;">Mulai Hitung Jajan</button>
+            style="font-size: 32px; padding: 14px 60px;">Ayo Mulai!</button>
         </div>
       </div>
     </section>
@@ -463,7 +463,7 @@
 
         <div style="margin-top: 10px;">
           <button type="button" class="tombol-start" id="btn-mulai-balap-becak"
-            style="font-size: 32px; padding: 12px 50px;">Mulai Balapan!</button>
+            style="font-size: 32px; padding: 12px 50px;">Ayo Balap!</button>
         </div>
       </div>
     </section>
@@ -560,7 +560,7 @@
       <div class="wadah-konten-statis"
         style="align-items: center; text-align: center; min-height: 480px; padding: 30px 40px;">
         <div id="wadah-piala-hasil" style="margin-bottom: 10px;"></div>
-        <div style="font-size: 32px; font-weight: bold; color: var(--soga);" id="hasil-selamat-nama">Hebat, Siswa!</div>
+        <div style="font-size: 32px; font-weight: bold; color: var(--soga);" id="hasil-selamat-nama">Hebat!</div>
 
         <div class="ringkasan-hasil-grid">
           <div class="kotak-hasil">
@@ -575,7 +575,7 @@
 
         <!-- Daftar fakta yang sering salah / masih sulit -->
         <div class="area-fakta-sulit" id="hasil-wadah-sulit" hidden>
-          <div style="font-size: 22px; font-weight: bold; color: var(--terakota); margin-bottom: 8px;">Fakta yang Masih
+          <div style="font-size: 22px; font-weight: bold; color: var(--terakota); margin-bottom: 8px;">Hal yang Masih
             Perlu Dipelajari:</div>
           <div class="daftar-chip-sulit" id="hasil-daftar-sulit"></div>
         </div>
@@ -742,13 +742,6 @@
               </select>
             </div>
 
-            <div class="form-group-guru checkbox">
-              <label>
-                <input type="checkbox" id="peng-lewati-onboard">
-                <span>Lewati Layar Nama/Karakter saat mulai baru</span>
-              </label>
-            </div>
-
             <div style="margin-top: 25px;">
               <button type="button" class="tombol-nav-guru primer" id="btn-guru-simpan-pengaturan"
                 style="font-size: 22px; padding: 10px 30px;">Simpan Pengaturan</button>
@@ -869,13 +862,16 @@
           </div>
         </div>
 
-        <!-- Navigasi Hal 1 / Hal 2 -->
+        <!-- Navigasi Hal 1 / Hal 2 (Ikon Kiri & Kanan) -->
         <div class="navigasi-halaman-profil">
-          <button type="button" class="tombol-nav" id="btn-profil-hal-1"
-            style="font-size: 20px; padding: 0 20px;">Halaman
-            1</button>
-          <button type="button" class="tombol-nav" id="btn-profil-hal-2"
-            style="font-size: 20px; padding: 0 20px; background: var(--soga);">Halaman 2</button>
+          <button type="button" class="tombol-ikon-nav tombol-profil-nav" id="btn-profil-kiri"
+            title="Halaman Sebelumnya" aria-label="Halaman Sebelumnya">
+            <span id="wadah-ikon-profil-kiri"></span>
+          </button>
+          <button type="button" class="tombol-ikon-nav tombol-profil-nav" id="btn-profil-kanan"
+            title="Halaman Selanjutnya" aria-label="Halaman Selanjutnya">
+            <span id="wadah-ikon-profil-kanan"></span>
+          </button>
         </div>
       </div>
     </section>

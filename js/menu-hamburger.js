@@ -1,7 +1,7 @@
 /* js/menu-hamburger.js — Pengontrol Drawer Panel Hamburger
    Sesuai ALUR.md & PRD (FR-03, FR-04):
    - Menu Utama hanya 2 kartu (Ruang Belajar & Ruang Bermain)
-   - Tombol hamburger "☰ Menu" aktif di layar 'menu' dan 'belajar'
+   - Tombol hamburger dapat diakses oleh semua halaman
    - Panel overlay berisi Bantuan (Tujuan, Panduan), Pengaturan (Suara, Akses Guru, Profil), dan Kembali ke awal
    - Aksesibilitas: buka/tutup via tombol X, klik backdrop luar, tombol Esc, dan manajemen fokus keyboard
 */
@@ -50,19 +50,18 @@
 
   function perbaruiVisibilitas(namaLayar) {
     if (!btnTrigger) return;
-    // Hamburger HANYA aktif di menu utama dan Ruang Belajar (ALUR.md §2 no. 3)
-    if (namaLayar === "menu" || namaLayar === "belajar") {
-      btnTrigger.hidden = false;
-    } else {
-      btnTrigger.hidden = true;
-      tutupPanel(); // Tutup panel jika layar berpindah ke tempat lain
-    }
+    // Menu hamburger dapat diakses oleh semua halaman
+    btnTrigger.hidden = false;
+    tutupPanel(); // Tutup panel jika layar berpindah
   }
 
   function init() {
     panelModal = document.getElementById("panel-hamburger");
     btnTrigger = document.getElementById("btn-hamburger");
     btnTutup = document.getElementById("btn-tutup-hamburger");
+    if (btnTrigger) {
+      btnTrigger.hidden = false;
+    }
 
     // Pasang ikon hamburger & tutup jika wadah ada
     var wadahIkonHb = document.getElementById("ikon-wadah-hamburger");

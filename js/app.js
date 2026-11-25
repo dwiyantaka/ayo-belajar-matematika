@@ -84,12 +84,20 @@
       });
     }
 
-    // 5. Layar Profil Pengembang: Foto Profil 1–4
+    // 5. Layar Profil Pengembang: Foto Profil 1–4 & Navigasi Kiri/Kanan
     for (var i = 1; i <= 4; i++) {
       var wadahProf = document.getElementById("wadah-profil-" + i);
       if (wadahProf && !wadahProf.firstChild) {
         wadahProf.appendChild(window.Aset.img("profil." + i));
       }
+    }
+    var wadahProfKiri = document.getElementById("wadah-ikon-profil-kiri");
+    if (wadahProfKiri && !wadahProfKiri.firstChild && window.Aset) {
+      wadahProfKiri.appendChild(window.Aset.img("ui.ikon-kiri"));
+    }
+    var wadahProfKanan = document.getElementById("wadah-ikon-profil-kanan");
+    if (wadahProfKanan && !wadahProfKanan.firstChild && window.Aset) {
+      wadahProfKanan.appendChild(window.Aset.img("ui.ikon-kanan"));
     }
 
     // 6. Kartu Menu Ruang Belajar: Gambar Perkalian & Pembagian
@@ -301,26 +309,36 @@
       }
     });
 
-    // Profil: Tab Halaman 1 dan 2
+    // Profil: Navigasi Ikon Kiri dan Kanan (Halaman 1 dan 2)
     var hal1 = document.getElementById("profil-hal-1");
     var hal2 = document.getElementById("profil-hal-2");
-    var btnHal1 = document.getElementById("btn-profil-hal-1");
-    var btnHal2 = document.getElementById("btn-profil-hal-2");
+    var btnProfilKiri = document.getElementById("btn-profil-kiri");
+    var btnProfilKanan = document.getElementById("btn-profil-kanan");
 
-    if (btnHal1 && btnHal2 && hal1 && hal2) {
-      btnHal1.addEventListener("click", function () {
-        window.Aset.putar("sfx.klik");
-        hal1.hidden = false;
-        hal2.hidden = true;
-        btnHal1.style.background = "var(--terakota)";
-        btnHal2.style.background = "var(--soga)";
+    function setHalamanProfil(nomor) {
+      if (nomor === 1) {
+        if (hal1) hal1.hidden = false;
+        if (hal2) hal2.hidden = true;
+        if (btnProfilKiri) btnProfilKiri.disabled = true;
+        if (btnProfilKanan) btnProfilKanan.disabled = false;
+      } else {
+        if (hal1) hal1.hidden = true;
+        if (hal2) hal2.hidden = false;
+        if (btnProfilKiri) btnProfilKiri.disabled = false;
+        if (btnProfilKanan) btnProfilKanan.disabled = true;
+      }
+    }
+    window.setHalamanProfil = setHalamanProfil;
+
+    if (btnProfilKiri && btnProfilKanan && hal1 && hal2) {
+      setHalamanProfil(1);
+      btnProfilKiri.addEventListener("click", function () {
+        if (window.Aset) window.Aset.putar("sfx.klik");
+        setHalamanProfil(1);
       });
-      btnHal2.addEventListener("click", function () {
-        window.Aset.putar("sfx.klik");
-        hal1.hidden = true;
-        hal2.hidden = false;
-        btnHal1.style.background = "var(--soga)";
-        btnHal2.style.background = "var(--terakota)";
+      btnProfilKanan.addEventListener("click", function () {
+        if (window.Aset) window.Aset.putar("sfx.klik");
+        setHalamanProfil(2);
       });
     }
 
@@ -425,11 +443,16 @@
       }
     }
 
-    // Visibilitas Bilah Navigasi Global (Pojok Kiri Atas), Speaker Global (Pojok Kanan Atas), dan Border Batik
-    // Sesuai permintaan: di layar bumper, HANYA tombol MULAI yang tampil.
+    // Layar Profil Pengembang: reset ke halaman 1 saat dibuka
+    if (namaLayar === "profil" && typeof window.setHalamanProfil === "function") {
+      window.setHalamanProfil(1);
+    }
+
+    // Visibilitas Bilah Navigasi Global (Pojok Kiri Atas), Speaker Global & Hamburger (Pojok Kanan Atas), dan Border Batik
+    // Menu hamburger dapat diakses oleh semua halaman
     var bilahSuara = document.getElementById("bilah-suara-global");
     if (bilahSuara) {
-      bilahSuara.hidden = (namaLayar === "bumper");
+      bilahSuara.hidden = false;
     }
 
     var elBorderAtas = document.getElementById("border-atas");
