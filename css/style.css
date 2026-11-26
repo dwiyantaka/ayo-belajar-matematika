@@ -532,7 +532,7 @@ body {
 /* Kelas dasar untuk seluruh tombol bertema tombol-start */
 .tombol-start {
   background: transparent url("../assets/img/ui/tombol-start.webp") center / 140% auto no-repeat;
-  color: var(--teks-terang);
+  color: var(--kuning-onde);
   border: none;
   border-radius: 0;
   display: inline-flex;
@@ -541,6 +541,7 @@ body {
   font-family: var(--font-judul);
   letter-spacing: 2px;
   cursor: pointer;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
   transition: transform 0.15s, filter 0.15s;
 }
@@ -745,7 +746,7 @@ body {
   font-family: "LilitaOne", var(--font-judul);
   font-size: 42px;
   /* font-weight: 700; */
-  color: var(--teks-terang);
+  color: var(--kuning-onde);
   text-align: center;
   line-height: 1.2;
   letter-spacing: 2px;

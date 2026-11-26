@@ -1016,3 +1016,24 @@ Catat satu entri per task. Format:
   - Periksa tampilan judul: baris atas "Ayo Belajar" berwarna hijau segar klepon, dan baris bawah "Matematika" berwarna merah muda ceria cenil.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Pewarnaan Teks Tombol Berlatar tombol-start: Kuning Onde-onde — 2026-11-26
+- **Dibuat/diubah:**
+  - `css/tema.css`:
+    - Menambahkan variabel warna `--kuning-onde: #FCD053;` (warna kuning keemasan biji wijen khas jajan onde-onde yang cerah dan hangat).
+  - `css/style.css`:
+    - Mengubah `color` pada `.tombol-start` dari `var(--teks-terang)` menjadi `var(--kuning-onde)`, serta menambahkan bayangan teks lembut (`text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);`) agar teks lebih tegas dan kontras di atas grafis kapsul hijau. Mencakup tombol MULAI di bumper, tombol "Ayo Mulai!" di Hitung Jajan, dan tombol "Ayo Balap!" di Balap Becak.
+    - Mengubah `color` pada `.judul-kartu-utama` dari `var(--teks-terang)` menjadi `var(--kuning-onde)` untuk tombol menu "Ruang Belajar" dan "Ruang Bermain" yang berlatar gambar `tombol-start.webp`.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 100/100 ada, 30/30 soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka/segarkan `index.html` di peramban:
+    1. Periksa tombol "MULAI" pada layar bumper: warna teks menjadi kuning keemasan onde-onde.
+    2. Masuk ke Menu Utama: periksa tombol "Ruang Belajar" dan "Ruang Bermain": teks menjadi warna kuning keemasan onde-onde.
+    3. Masuk ke Ruang Bermain -> Hitung Jajan ("Ayo Mulai!") dan Balap Becak ("Ayo Balap!"): teks tombol berlatar kapsul hijau tampil seragam dengan warna kuning onde-onde.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
