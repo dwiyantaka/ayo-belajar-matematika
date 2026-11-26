@@ -2883,12 +2883,22 @@ body {
 }
 
 /* Modal Editor Soal */
+#modal-editor-soal {
+  background: rgba(0, 0, 0, 0.72);
+}
+
 .modal-editor-kotak {
+  background: var(--krem);
+  border: 4px solid var(--soga);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
   width: 900px;
   max-width: 95%;
-  max-height: 90vh;
+  max-height: 88vh;
   overflow-y: auto;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .modal-editor-grid {

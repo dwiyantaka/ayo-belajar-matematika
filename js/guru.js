@@ -188,8 +188,6 @@
       var tdIlus = document.createElement("td"); tdIlus.textContent = s.ilustrasi || s.objek || "-";
       tdIlus.style.fontSize = "16px";
       var tdKunci = document.createElement("td"); tdKunci.textContent = s.kunci;
-      var tdStatus = document.createElement("td");
-      tdStatus.textContent = (s._asal === "guru") ? "Baru" : (s._asal === "diubah") ? "Diedit" : "Bawaan";
 
       var tdAksi = document.createElement("td");
       var btnEdit = document.createElement("button");
@@ -220,7 +218,6 @@
       tr.appendChild(tdTeks);
       tr.appendChild(tdIlus);
       tr.appendChild(tdKunci);
-      tr.appendChild(tdStatus);
       tr.appendChild(tdAksi);
 
       wadah.appendChild(tr);

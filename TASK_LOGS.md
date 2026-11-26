@@ -956,3 +956,26 @@ Catat satu entri per task. Format:
   - Pastikan isi pop-up "Tahukah Kamu?" menampilkan penjelasan budaya yang tepat sesuai makanan/objek pada soal tersebut.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Panel Akses Guru: Hapus Kolom Status & Modal Editor Soal Tidak Transparan — 2026-11-26
+- **Dibuat/diubah:**
+  - `index.html`:
+    - Menghapus kolom header `<th>Status</th>` dari tabel daftar soal guru (`.guru-tabel`).
+  - `js/guru.js`:
+    - Menghapus pembuatan sel data status (`tdStatus`) pada fungsi `renderDaftarSoalGuru()` agar selaras dengan header tabel dan tabel lebih leluasa.
+  - `css/style.css`:
+    - Menambahkan latar belakang solid (`background: var(--krem)`), border tegas (`border: 4px solid var(--soga)`), bayangan tebal (`box-shadow`), serta padding lega pada modal tambah/ubah soal (`.modal-editor-kotak`) sehingga 100% tidak transparan dan sangat mudah dibaca.
+    - Menambahkan backdrop gelap pekat pada `#modal-editor-soal` (`rgba(0, 0, 0, 0.72)`) agar fokus pembaca tertuju sepenuhnya pada formulir soal.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada, 30/30 soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka menu hamburger, pilih **Akses Guru** (PIN bawaan: 1234).
+  - Pada tab **Daftar Soal**:
+    1. Pastikan kolom "Status" sudah tidak ada dan tabel tampil lebih rapi dan lapang.
+    2. Klik tombol **+ Tambah Soal** atau tombol **Edit** pada salah satu soal: pastikan modal form pop-up editor soal tampil solid (tidak transparan), dengan kontras tinggi sehingga teks dan input sangat mudah dibaca.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
