@@ -396,7 +396,7 @@ body {
 
 .bumper-judul-teks {
   font-family: var(--font-judul);
-  font-size: 90px;
+  font-size: 100px;
   margin: 0;
   text-align: center;
   line-height: 1.15;
@@ -532,7 +532,8 @@ body {
 /* Kelas dasar untuk seluruh tombol bertema tombol-start */
 .tombol-start {
   background: transparent url("../assets/img/ui/tombol-start.webp") center / 140% auto no-repeat;
-  color: var(--kuning-onde);
+  /* color: var(--kuning-onde); */
+  color: whitesmoke;
   border: none;
   border-radius: 0;
   display: inline-flex;
@@ -559,8 +560,8 @@ body {
 .tombol-start-aplikasi {
   width: 380px;
   height: 140px;
-  font-size: 38px;
-  padding: 0 0 4px 0;
+  font-size: 50px;
+  /* padding: 0 0 0 0; */
   animation: start-denyut 2.4s ease-in-out infinite;
 }
 

@@ -115,7 +115,8 @@ window.ASET_MANIFEST = (function () {
   a("sfx.klik", "sfx/klik.wav", "Bunyi klik", false);
   a("sfx.benar", "sfx/benar.mp3", "Bunyi jawaban benar", false);
   a("sfx.salah", "sfx/salah.mp3", "Bunyi jawaban salah", false);
-  a("sfx.menang", "sfx/menang.mp3", "Bunyi pemenang", false);
+  a("sfx.menang", "sfx/selamat.mp3", "Bunyi pemenang", false);
+  a("sfx.selamat", "sfx/selamat.mp3", "Bunyi selamat / pemenang", false);
 
   /* ---- BALAP BECAK ---- */
   g("balap.becak1", "balap/becak1.png", "Becak pemain 1", "256x160");
@@ -133,10 +134,10 @@ window.ASET_MANIFEST = (function () {
   g("ui.tombol-kunci", "ui/tombol-kunci.svg", "Kotak label tombol keyboard", "96x96");
 
   return {
-    versi: 15,                                  /* naikkan setelah mengganti isi berkas */
+    versi: 16,                                  /* naikkan setelah mengganti isi berkas */
     gambar: G,
     audio: A,
     narasiFolder: "assets/audio/narasi/",       /* narasi per soal: <ID>.mp3, mis. P-03.mp3 */
-    font: { judul: "assets/fonts/judul.woff2", isi: "assets/fonts/isi.woff2", lilita: "assets/fonts/LilitaOne.ttf" }
+    font: { judul: "assets/fonts/judul.woff2", isi: "assets/fonts/isi.woff2", lilita: "assets/fonts/LilitaOne.ttf", chewy: "assets/fonts/Chewy.ttf" }
   };
 })();

@@ -1,24 +1,24 @@
 /* TEMA — satu tempat untuk mengganti warna dan ukuran. Jangan hardcode warna di berkas lain. */
 :root {
-  --hijau-tua:  #2F5233;
-  --kuning:     #F0CD66;
+  --hijau-tua: #2F5233;
+  --kuning: #F0CD66;
   --hijau-muda: #B3C65A;
-  --terakota:   #C0562F;
-  --krem:       #F5ECDC;
-  --soga:       #6B3F1D;
-  --teks:       #3B2A1A;
-  --teks-terang:#FFFFFF;
-  --benar:      #3E9B3E;
-  --salah:      #D9382B;
-  --hijau-klepon:#3D7D31;
+  --terakota: #C0562F;
+  --krem: #F5ECDC;
+  --soga: #6B3F1D;
+  --teks: #3B2A1A;
+  --teks-terang: #FFFFFF;
+  --benar: #3E9B3E;
+  --salah: #D9382B;
+  --hijau-klepon: #3D7D31;
   --pink-cenil: #D8436D;
-  --kuning-onde:#FCD053;
+  --kuning-onde: #FCD053;
 
-  --font-judul: "JudulJawa", "Trebuchet MS", "Segoe UI", sans-serif;
-  --font-isi:   "IsiJawa", "Segoe UI", Arial, sans-serif;
+  --font-judul: "Chewy", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-isi: "IsiJawa", "Segoe UI", Arial, sans-serif;
 
-  --ukuran-teks:   28px;
-  --ukuran-judul:  56px;
-  --target-min:    48px;
-  --radius:        28px;
+  --ukuran-teks: 28px;
+  --ukuran-judul: 56px;
+  --target-min: 48px;
+  --radius: 28px;
 }

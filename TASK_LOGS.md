@@ -1037,3 +1037,26 @@ Catat satu entri per task. Format:
     3. Masuk ke Ruang Bermain -> Hitung Jajan ("Ayo Mulai!") dan Balap Becak ("Ayo Balap!"): teks tombol berlatar kapsul hijau tampil seragam dengan warna kuning onde-onde.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Penghubungan Sound Effect (Benar, Salah, Menang) & Penggantian Nama Ilustrasi Soal J-21 s.d. J-30 — 2026-11-26
+- **Dibuat/diubah:**
+  - `assets/audio/sfx/`:
+    - Sound effect `benar.mp3`, `salah.mp3`, dan `selamat.mp3` telah diintegrasikan.
+  - `assets/manifest.js`:
+    - Memetakan kunci `sfx.menang` ke berkas `sfx/selamat.mp3` (beserta alias `sfx.selamat`).
+    - Menambahkan deklarasi font `chewy: "assets/fonts/Chewy.ttf"`.
+    - Menaikkan versi manifest ke `16` untuk pembaruan cache audio & font.
+  - `assets/ilustrasi-soal/`:
+    - Mengubah nama berkas `1.png` s.d. `10.png` menjadi `J-21.png` s.d. `J-30.png` sehingga tepat terhubung dengan ID soal level 3 di `js/soal.js`.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 100/100 ada, audio 6/7 ada (hanya musik.bumper yang belum ada), 30/30 soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka/segarkan `index.html` di peramban:
+    1. Mainkan kuis Hitung Jajan atau Balap Becak: pastikan efek suara saat menjawab benar (`sfx/benar.mp3`), menjawab salah (`sfx/salah.mp3`), dan saat menyelesaikan permainan/menang (`sfx/selamat.mp3`) berbunyi dengan baik.
+    2. Masuk ke soal nomor J-21 s.d. J-30 (level 3 di Hitung Jajan atau melalui Bank Soal di Akses Guru): periksa apakah gambar ilustrasi soal telah muncul sesuai berkas baru.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

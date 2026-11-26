@@ -1,5 +1,25 @@
 /* Font lokal. Ganti berkas di assets/fonts/ (nama tetap) atau ubah baris src.
    Bila berkas belum ada, peramban memakai font cadangan di css/tema.css. */
-@font-face { font-family: "JudulJawa"; src: url("../assets/fonts/judul.woff2") format("woff2"); font-display: swap; }
-@font-face { font-family: "IsiJawa";   src: url("../assets/fonts/isi.woff2")   format("woff2"); font-display: swap; }
-@font-face { font-family: "LilitaOne"; src: url("../assets/fonts/LilitaOne.ttf") format("truetype"); font-display: swap; }
+@font-face {
+   font-family: "JudulJawa";
+   src: url("../assets/fonts/judul.woff2") format("woff2");
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "IsiJawa";
+   src: url("../assets/fonts/isi.woff2") format("woff2");
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "LilitaOne";
+   src: url("../assets/fonts/LilitaOne.ttf") format("truetype");
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Chewy";
+   src: url("../assets/fonts/Chewy.ttf") format("truetype");
+   font-display: swap;
+}
