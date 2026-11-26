@@ -995,3 +995,24 @@ Catat satu entri per task. Format:
   - Buka/segarkan tab `index.html` pada peramban periksa apakah ikon tab/favicon sudah menampilkan gambar klepon berornamen tradisional.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Pewarnaan Teks Judul Bumper: Hijau Klepon & Pink Cenil — 2026-11-26
+- **Dibuat/diubah:**
+  - `css/tema.css`:
+    - Menambahkan variabel warna `--hijau-klepon: #3D7D31;` (hijau daun suji khas jajan klepon) dan `--pink-cenil: #D8436D;` (merah muda ceria khas jajan cenil).
+  - `index.html`:
+    - Membungkus teks baris pertama "Ayo Belajar" dengan kelas `.teks-klepon` dan baris kedua "Matematika" dengan kelas `.teks-cenil`.
+  - `css/style.css`:
+    - Menerapkan warna `--hijau-klepon` pada `.bumper-judul-teks .teks-klepon` dan `--pink-cenil` pada `.bumper-judul-teks .teks-cenil`.
+    - Memperbarui `text-shadow` dengan garis tepi putih kontras (`var(--teks-terang)`) selayaknya taburan kelapa parut pada jajan tradisional, dipadukan bayangan lembut sehingga tulisan sangat kontras, tegas, dan mudah dibaca di atas latar belakang bumper.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 100/100 ada, 30/30 soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka/segarkan layar awal bumper di `index.html`.
+  - Periksa tampilan judul: baris atas "Ayo Belajar" berwarna hijau segar klepon, dan baris bawah "Matematika" berwarna merah muda ceria cenil.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

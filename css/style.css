@@ -338,7 +338,7 @@ body {
 .bumper-logo-instansi {
   position: absolute;
   top: 40px;
-  left: 25px;
+  left: 40px;
   z-index: 10;
   width: 130px;
   height: 130px;
@@ -397,19 +397,26 @@ body {
 .bumper-judul-teks {
   font-family: var(--font-judul);
   font-size: 90px;
-  color: var(--soga);
   margin: 0;
   text-align: center;
   line-height: 1.15;
   letter-spacing: 8px;
   text-shadow:
-    -2px -2px 0 var(--kuning),
-    2px -2px 0 var(--kuning),
-    -2px 2px 0 var(--kuning),
-    2px 2px 0 var(--kuning),
-    0 3px 10px rgba(0, 0, 0, 0.35);
+    -3px -3px 0 var(--teks-terang),
+    3px -3px 0 var(--teks-terang),
+    -3px 3px 0 var(--teks-terang),
+    3px 3px 0 var(--teks-terang),
+    0 4px 14px rgba(0, 0, 0, 0.3);
   animation: judul-masuk 0.9s cubic-bezier(0.18, 0.9, 0.32, 1.25) both,
     judul-mengapung 3.6s ease-in-out 0.9s infinite alternate;
+}
+
+.bumper-judul-teks .teks-klepon {
+  color: var(--hijau-klepon);
+}
+
+.bumper-judul-teks .teks-cenil {
+  color: var(--pink-cenil);
 }
 
 @keyframes judul-masuk {
@@ -550,7 +557,7 @@ body {
 /* 1. Tombol Mulai Aplikasi (Bumper) - Bisa diatur mandiri ukurannya */
 .tombol-start-aplikasi {
   width: 380px;
-  height: 130px;
+  height: 140px;
   font-size: 38px;
   padding: 0 0 4px 0;
   animation: start-denyut 2.4s ease-in-out infinite;
