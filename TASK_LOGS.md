@@ -1060,3 +1060,20 @@ Catat satu entri per task. Format:
     2. Masuk ke soal nomor J-21 s.d. J-30 (level 3 di Hitung Jajan atau melalui Bank Soal di Akses Guru): periksa apakah gambar ilustrasi soal telah muncul sesuai berkas baru.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Penggantian Nama Ilustrasi Soal J-01 s.d. J-10 — 2026-11-26
+- **Dibuat/diubah:**
+  - `assets/ilustrasi-soal/`:
+    - Mengubah nama berkas `1.png` s.d. `10.png` menjadi `J-01.png` s.d. `J-10.png` untuk soal level 1 di `js/soal.js`.
+    - Berkas `1.png` dan `2.png` yang beresolusi raksasa (12.500 × 9.375 px, ~163–186 MB) disesuaikan resolusinya menjadi 3.200 × 2.400 px (~6–8 MB) agar seragam dengan berkas 3 s.d. 10, tetap berdefinisi ultra-tinggi (4K), tidak melampaui batas maksimal GitHub (100 MB), serta cepat dan lancar saat di-render oleh peramban.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 100/100 ada, audio 6/7 ada, 30/30 soal valid.
+  - Seluruh 30 berkas ilustrasi (`J-01` s.d. `J-30`) kini lengkap tersedia di `assets/ilustrasi-soal/`.
+- **Perlu dicek pengguna di peramban:**
+  - Buka kuis Hitung Jajan (Level 1) atau menu Bank Soal di Akses Guru untuk memeriksa kemunculan gambar `J-01.png` s.d. `J-10.png`.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
