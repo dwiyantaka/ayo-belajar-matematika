@@ -110,7 +110,7 @@ window.ASET_MANIFEST = (function () {
 
   /* ---- AUDIO (berkas boleh belum ada; aplikasi tetap jalan) ---- */
   a("musik.bumper", "musik/gamelan-bumper.mp3", "Gamelan pendek bumper", false);
-  a("musik.latar", "musik/gamelan-latar.mp3", "Musik latar lembut", true);
+  a("musik.latar", "musik/padhang-bulan.mp3", "Musik latar lembut", true);
   a("sfx.klik", "sfx/klik.wav", "Bunyi klik", false);
   a("sfx.benar", "sfx/benar.mp3", "Bunyi jawaban benar", false);
   a("sfx.salah", "sfx/salah.mp3", "Bunyi jawaban salah", false);

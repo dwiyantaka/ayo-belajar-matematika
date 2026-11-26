@@ -1,26 +1,16 @@
 /* FUN FACT per objek (ikon "?"). STATUS: bahan awal, WAJIB diverifikasi ahli budaya/bahasa sebelum dipakai.
    Kunci = kunci objek di assets/manifest.js. Tambah/ubah bebas; jangan menambah klaim yang belum diperiksa. */
 window.FUNFACT = {
-  "makanan.klepon":       "Klepon adalah jajanan dari tepung ketan berisi gula merah, digulingkan pada kelapa parut.",
-  "makanan.getuk":        "Getuk adalah makanan khas dari daerah Magelang, Jawa Tengah.",
-  "makanan.cenil":        "Cenil adalah jajanan pasar berwarna-warni dari tepung singkong atau ketan.",
-  "makanan.bakpia":       "Bakpia adalah makanan khas dari daerah Yogyakarta.",
-  "makanan.geplak":       "Geplak adalah jajanan manis dari kelapa dan gula, dikenal di daerah Bantul.",
-  "makanan.yangko":       "Yangko adalah jajanan ketan manis yang dikenal dari Kotagede, Yogyakarta.",
-  "makanan.jadah-tempe":  "Jadah tempe adalah jajanan khas kawasan Kaliurang, Yogyakarta.",
-  "makanan.apem":         "Apem adalah kue tradisional yang sering hadir dalam acara adat.",
-  "makanan.wajik":        "Wajik adalah jajanan pasar dari ketan dan gula.",
-  "makanan.lemper":       "Lemper adalah jajanan ketan berisi daging atau abon yang dibungkus daun pisang.",
-  "makanan.serabi":       "Serabi adalah jajanan pasar berbahan tepung beras dan santan.",
-  "makanan.wedang-uwuh":  "Wedang uwuh adalah minuman rempah dari daerah Imogiri, Yogyakarta.",
-  "makanan.gudeg":        "Gudeg adalah masakan khas Yogyakarta dari nangka muda.",
-  "transportasi.becak":   "Becak adalah kendaraan roda tiga yang dikayuh, masih dipakai di kota-kota di Jawa.",
-  "transportasi.andong":  "Andong adalah kereta yang ditarik kuda.",
-  "transportasi.sepeda-onthel": "Sepeda onthel adalah sepeda kuno yang masih dipakai dan dikenal di Yogyakarta.",
-  "transportasi.bus-transjogja": "Trans Jogja adalah bus kota di Yogyakarta.",
-  "busana.blangkon":      "Blangkon adalah penutup kepala yang dipakai laki-laki Jawa.",
-  "busana.batik-jarik":   "Batik adalah kain bermotif yang dibuat dengan malam, jarik dipakai sebagai kain panjang.",
-  "busana.surjan":        "Surjan adalah baju bergaris (lurik) yang dipakai laki-laki Jawa, terutama di Yogyakarta.",
-  "busana.kebaya":        "Kebaya adalah baju atasan perempuan yang dipadukan dengan kain jarik.",
-  "busana.selendang":     "Selendang adalah kain panjang yang dipakai penari sebagai bagian busana."
+  "klepon": "Klepon dibawa perantau Indonesia ke Belanda sejak sekitar 1950-an. Di Malaysia dan Singapura, klepon dikenal sebagai onde-onde, padahal di Indonesia onde-onde adalah jajan yang berbeda.",
+  "apem": "Kata apem dipercaya berasal dari bahasa Arab affuan yang berarti ampunan. Karena itu, apem sering muncul dalam tradisi seperti Megengan di Jawa sebagai simbol permohonan maaf dan rasa syukur.",
+  "getuk": "Saat pendudukan Jepang, beras sangat langka dan mahal. Getuk berbahan dasar singkong pun banyak dijadikan makanan pokok alternatif. Namanya dipercaya berasal dari bunyi tuk-tuk saat singkong ditumbuk.",
+  "serabi": "Lubang-lubang pada permukaan serabi terbentuk karena gelembung udara dalam adonan pecah saat dimasak di atas wajan panas. Di Cirebon, serabi juga punya makna simbolis yang dikaitkan dengan peristiwa sejarah religius.",
+  "wajik": "Dalam bahasa Jawa, wajik berarti bentuk belah ketupat, sesuai dengan potongan kue ini. Wajik sudah tercatat dalam naskah kuno Nagarakretagama dan dahulu dikenal sebagai makanan kalangan keraton.",
+  "cenil": "Cenil dipercaya berkaitan dengan kata Jawa jentil yang menggambarkan tekstur kenyal dan mudah ditekan. Seperti getuk, cenil juga pernah menjadi pengganti makanan pokok pada masa sulit.",
+  "lemper": "Menurut cerita rakyat, lemper berasal dari ungkapan Jawa yen dielem atimu ojo memper, artinya jika dipuji jangan sombong. Lemper juga kadang dibuat dalam ukuran raksasa untuk acara adat tertentu.",
+  "geplak": "Saat membuat geplak, adonan panas kadang ditepuk-tepuk hingga muncul bunyi geplak. Jajan ini juga pernah menjadi makanan pengganti nasi saat paceklik dan kini diakui sebagai warisan budaya takbenda Indonesia.",
+  "bakpia": "Nama bakpia berasal dari dialek Hokkien: bak berarti daging dan pia berarti kue. Versi awalnya berisi daging babi. Setelah berkembang di masyarakat Muslim, isinya diubah menjadi kacang hijau dan varian manis lainnya.",
+  "jadah tempe": "Jadah tempe adalah makanan favorit Sultan Hamengkubuwono IX. Jadah tempe terkenal karena kontras teksturnya: jadah yang legit dan kenyal berpadu dengan tempe bacem yang gurih-manis.",
+  "jadah-tempe": "Jadah tempe adalah makanan favorit Sultan Hamengkubuwono IX. Jadah tempe terkenal karena kontras teksturnya: jadah yang legit dan kenyal berpadu dengan tempe bacem yang gurih-manis.",
+  "yangko": "Yangko adalah jajanan khas Kotagede, Yogyakarta berbahan tepung ketan yang kenyal, manis, dan dahulu sering dijadikan bekal para pejuang karena tahan lama."
 };

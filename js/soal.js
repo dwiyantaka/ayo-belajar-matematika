@@ -13,6 +13,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 1,
     "ilustrasi": "J-01.png",
+    "label": "klepon",
     "operan": [
       3,
       4
@@ -33,6 +34,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 1,
     "ilustrasi": "J-02.png",
+    "label": "apem",
     "operan": [
       5,
       2
@@ -53,6 +55,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 1,
     "ilustrasi": "J-03.png",
+    "label": "getuk",
     "operan": [
       12,
       3
@@ -73,6 +76,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 1,
     "ilustrasi": "J-04.png",
+    "label": "serabi",
     "operan": [
       4,
       5
@@ -93,6 +97,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 1,
     "ilustrasi": "J-05.png",
+    "label": "wajik",
     "operan": [
       18,
       3
@@ -113,6 +118,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 1,
     "ilustrasi": "J-06.png",
+    "label": "cenil",
     "operan": [
       3,
       10
@@ -133,6 +139,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 1,
     "ilustrasi": "J-07.png",
+    "label": "lemper",
     "operan": [
       16,
       4
@@ -153,6 +160,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 1,
     "ilustrasi": "J-08.png",
+    "label": "geplak",
     "operan": [
       2,
       8
@@ -173,6 +181,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 1,
     "ilustrasi": "J-09.png",
+    "label": "bakpia",
     "operan": [
       30,
       5
@@ -193,6 +202,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 1,
     "ilustrasi": "J-10.png",
+    "label": "jadah tempe",
     "operan": [
       5,
       5
@@ -212,7 +222,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "kali",
     "level": 2,
-    "ilustrasi": "J-11.png",
+    "ilustrasi": "J-11.webp",
+    "label": "bakpia",
     "operan": [
       6,
       8
@@ -232,7 +243,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "bagi",
     "level": 2,
-    "ilustrasi": "J-12.png",
+    "ilustrasi": "J-12.webp",
+    "label": "yangko",
     "operan": [
       35,
       7
@@ -252,7 +264,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "kali",
     "level": 2,
-    "ilustrasi": "J-13.png",
+    "ilustrasi": "J-13.webp",
+    "label": "serabi",
     "operan": [
       7,
       6
@@ -272,7 +285,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "bagi",
     "level": 2,
-    "ilustrasi": "J-14.png",
+    "ilustrasi": "J-14.webp",
+    "label": "apem",
     "operan": [
       48,
       6
@@ -292,7 +306,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "kali",
     "level": 2,
-    "ilustrasi": "J-15.png",
+    "ilustrasi": "J-15.webp",
+    "label": "klepon",
     "operan": [
       8,
       5
@@ -312,7 +327,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "bagi",
     "level": 2,
-    "ilustrasi": "J-16.png",
+    "ilustrasi": "J-16.webp",
+    "label": "getuk",
     "operan": [
       54,
       9
@@ -332,7 +348,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "kali",
     "level": 2,
-    "ilustrasi": "J-17.png",
+    "ilustrasi": "J-17.webp",
+    "label": "wajik",
     "operan": [
       6,
       9
@@ -352,7 +369,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "bagi",
     "level": 2,
-    "ilustrasi": "J-18.png",
+    "ilustrasi": "J-18.webp",
+    "label": "lemper",
     "operan": [
       40,
       8
@@ -372,7 +390,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "kali",
     "level": 2,
-    "ilustrasi": "J-19.png",
+    "ilustrasi": "J-19.webp",
+    "label": "cenil",
     "operan": [
       10,
       7
@@ -392,7 +411,8 @@ window.BANK_SOAL = [
     "permainan": "tebak",
     "operasi": "bagi",
     "level": 2,
-    "ilustrasi": "J-20.png",
+    "ilustrasi": "J-20.webp",
+    "label": "geplak",
     "operan": [
       63,
       7
@@ -413,6 +433,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 3,
     "ilustrasi": "J-21.png",
+    "label": "jadah tempe",
     "operan": [
       8,
       7
@@ -433,6 +454,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 3,
     "ilustrasi": "J-22.png",
+    "label": "bakpia",
     "operan": [
       72,
       8
@@ -453,6 +475,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 3,
     "ilustrasi": "J-23.png",
+    "label": "geplak",
     "operan": [
       9,
       9
@@ -473,6 +496,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 3,
     "ilustrasi": "J-24.png",
+    "label": "getuk",
     "operan": [
       56,
       8
@@ -493,6 +517,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 3,
     "ilustrasi": "J-25.png",
+    "label": "serabi",
     "operan": [
       9,
       7
@@ -513,6 +538,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 3,
     "ilustrasi": "J-26.png",
+    "label": "apem",
     "operan": [
       42,
       6
@@ -533,6 +559,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 3,
     "ilustrasi": "J-27.png",
+    "label": "lemper",
     "operan": [
       8,
       8
@@ -553,6 +580,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 3,
     "ilustrasi": "J-28.png",
+    "label": "klepon",
     "operan": [
       63,
       7
@@ -573,6 +601,7 @@ window.BANK_SOAL = [
     "operasi": "bagi",
     "level": 3,
     "ilustrasi": "J-29.png",
+    "label": "jadah tempe",
     "operan": [
       90,
       10
@@ -593,6 +622,7 @@ window.BANK_SOAL = [
     "operasi": "kali",
     "level": 3,
     "ilustrasi": "J-30.png",
+    "label": "bakpia",
     "operan": [
       9,
       8

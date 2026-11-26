@@ -949,8 +949,28 @@
     if (btnFun && modalFun) {
       btnFun.addEventListener("click", function () {
         window.Aset.putar("sfx.klik");
-        var obj = (state.tebak.soalAktif && state.tebak.soalAktif.objek) || "makanan.klepon";
-        var konten = (window.FUNFACT && window.FUNFACT[obj]) || "Objek ini adalah bagian dari kuliner budaya Jawa.";
+        var s = state.tebak.soalAktif;
+        var label = "";
+        if (s) {
+          label = s.label || s.objek || "";
+        }
+        label = String(label).toLowerCase().trim();
+
+        // Cari konten fun fact berdasarkan label soal
+        var konten = null;
+        if (window.FUNFACT && label) {
+          konten = window.FUNFACT[label] ||
+            window.FUNFACT[label.replace(/\s+/g, "-")] ||
+            window.FUNFACT[label.replace(/-/g, " ")] ||
+            window.FUNFACT["makanan." + label] ||
+            window.FUNFACT["makanan." + label.replace(/\s+/g, "-")];
+        }
+
+        if (!konten) {
+          konten = (window.FUNFACT && window.FUNFACT["klepon"]) ||
+            "Jajanan tradisional ini adalah bagian dari kekayaan kuliner khas Nusantara.";
+        }
+
         if (teksFun) teksFun.textContent = konten;
         modalFun.hidden = false;
       });

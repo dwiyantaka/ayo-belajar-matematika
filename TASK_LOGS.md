@@ -935,3 +935,24 @@ Catat satu entri per task. Format:
     5. Masuk ke ruang manapun (misal: Ruang Belajar, Tabel Perkalian, Ruang Bermain, Hitung Jajan, Balap Becak, Profil, dll): pastikan di pojok kiri atas terdapat 2 tombol berdampingan: tombol Kembali (panah) dan tombol Rumah (`assets/img/ui/ikon-rumah.webp`) yang langsung membawa kembali ke Menu Utama.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Integrasi Fun Fact Sesuai Properti Label Soal — 2026-11-26
+- **Dibuat/diubah:**
+  - `js/game.js`:
+    - Memperbarui event listener tombol Fun Fact (`#btn-kuis-funfact`) agar mengambil nilai `label` dari soal yang sedang aktif (`state.tebak.soalAktif.label`).
+    - Menambahkan normalisasi pencocokan cerdas (mencocokkan nama label langsung, variasi tanda hubung vs spasi, dan prefix `makanan.`).
+    - Menyediakan teks *fallback* cadangan jika ada label baru yang belum tercatat.
+  - `js/funfact.js`:
+    - Menambahkan entri fun fact untuk `"yangko"` dan sinonim `"jadah-tempe"` agar seluruh variasi label pada bank soal terfasilitasi.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 99/99 ada, seluruh 30 soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka kuis Hitung Jajan di `index.html`.
+  - Pada tiap soal (misal klepon, apem, getuk, serabi, wajik, cenil, lemper, geplak, bakpia, jadah tempe, yangko), klik ikon Fun Fact (tanda seru/lampu) di pojok kanan atas area soal.
+  - Pastikan isi pop-up "Tahukah Kamu?" menampilkan penjelasan budaya yang tepat sesuai makanan/objek pada soal tersebut.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -
