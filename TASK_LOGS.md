@@ -979,3 +979,19 @@ Catat satu entri per task. Format:
     2. Klik tombol **+ Tambah Soal** atau tombol **Edit** pada salah satu soal: pastikan modal form pop-up editor soal tampil solid (tidak transparan), dengan kontras tinggi sehingga teks dan input sangat mudah dibaca.
 - **Paket/alat tambahan (jika ada) + alasan:** -
 - **Catatan/penyimpangan dari docs:** -
+
+
+---
+
+## Penambahan Favicon Aplikasi — 2026-11-26
+- **Dibuat/diubah:**
+  - `assets/img/ui/favicon.webp`: menyalin gambar maskot klepon berbingkai ornamen tradisional yang diunggah pengguna menjadi favicon aplikasi.
+  - `index.html`: menambahkan tag `<link rel="icon" type="image/webp" href="assets/img/ui/favicon.webp">` pada bagian `<head>`.
+  - `assets/manifest.js`: mendaftarkan entri `ui.favicon` agar tervalidasi oleh sistem aset.
+- **Verifikasi:**
+  - `node -c js/*.js`: lolos uji sintaks (0 galat).
+  - `node tools/cek-aset.mjs`: gambar 100/100 ada, seluruh soal valid.
+- **Perlu dicek pengguna di peramban:**
+  - Buka/segarkan tab `index.html` pada peramban periksa apakah ikon tab/favicon sudah menampilkan gambar klepon berornamen tradisional.
+- **Paket/alat tambahan (jika ada) + alasan:** -
+- **Catatan/penyimpangan dari docs:** -

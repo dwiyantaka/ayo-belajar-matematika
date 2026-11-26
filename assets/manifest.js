@@ -49,6 +49,7 @@ window.ASET_MANIFEST = (function () {
   g("ui.ikon-gembok", "ui/ikon-guru.webp", "Ikon gembok PIN guru", "128x128");
   g("ui.ikon-rumah", "ui/ikon-rumah.webp", "Ikon rumah kembali ke awal", "128x128");
   g("ui.ikon-keluar", "ui/ikon-keluar.webp", "Ikon keluar game", "128x128");
+  g("ui.favicon", "ui/favicon.webp", "Favicon aplikasi", "512x512");
 
   /* ---- ORNAMEN / DEKORASI ---- */
   g("ornamen.border-atas", "ornamen/border-atas.svg", "Border batik atas", "1366x120");

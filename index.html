@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ayo Belajar Matematika</title>
+  <link rel="icon" type="image/webp" href="assets/img/ui/favicon.webp">
   <link rel="stylesheet" href="css/tema.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
@@ -781,25 +782,25 @@
           style="font-family: var(--font-judul); color: var(--soga); margin-top: 0; font-size: 26px;">Tambah Soal Baru
         </h2>
         <div class="modal-editor-grid">
-          <div class="form-group-guru">
+          <div class="form-group-guru penuh">
             <label for="form-soal-operasi">Operasi:</label>
             <select id="form-soal-operasi" class="input-guru-pilihan">
               <option value="kali">Perkalian (×)</option>
               <option value="bagi">Pembagian (÷)</option>
             </select>
           </div>
-          <div class="form-group-guru">
+          <div class="form-group-guru penuh">
             <label for="form-soal-level">Level:</label>
             <select id="form-soal-level" class="input-guru-pilihan">
-              <option value="1">Level 1 (Fakta Dasar Rendah)</option>
-              <option value="2">Level 2 (Fakta Dasar Sedang)</option>
-              <option value="3">Level 3 (Fakta Dasar Tinggi)</option>
+              <option value="1">Level 1 (Hitungan Dasar Rendah)</option>
+              <option value="2">Level 2 (Hitungan Dasar Sedang)</option>
+              <option value="3">Level 3 (Hitungan Dasar Tinggi)</option>
             </select>
           </div>
           <div class="form-group-guru penuh">
             <label for="form-soal-teks">Teks Soal:</label>
-            <input type="text" id="form-soal-teks" class="input-guru-teks"
-              placeholder="Contoh: Ada 4 piring klepon. Setiap piring berisi 5 klepon...">
+            <textarea id="form-soal-teks" class="input-guru-teks"
+              placeholder="Contoh: Ada 4 piring klepon. Setiap piring berisi 5 klepon..." rows="4"></textarea>
           </div>
           <div class="form-group-guru">
             <label for="form-soal-operan1">Operan 1 (a):</label>
@@ -810,6 +811,7 @@
             <input type="number" id="form-soal-operan2" class="input-guru-teks" min="1" max="10" value="3">
           </div>
           <div class="form-group-guru">
+            <br>
             <label for="form-soal-kunci">Kunci Jawaban:</label>
             <input type="number" id="form-soal-kunci" class="input-guru-teks" value="6">
           </div>
@@ -817,12 +819,7 @@
             <label for="form-soal-pilihan">Pilihan Jawaban (3 angka, pisahkan koma):</label>
             <input type="text" id="form-soal-pilihan" class="input-guru-teks" placeholder="Contoh: 4, 6, 8">
           </div>
-          <div class="form-group-guru">
-            <label for="form-soal-ilustrasi">Nama File Ilustrasi Soal (di assets/ilustrasi-soal/):</label>
-            <input type="text" id="form-soal-ilustrasi" class="input-guru-teks"
-              placeholder="Contoh: P-01.png atau klepon-3x5.webp (opsional)">
-          </div>
-          <div class="form-group-guru">
+          <div class="form-group-guru penuh">
             <label for="form-soal-hint">Petunjuk / Bantuan (Hint):</label>
             <input type="text" id="form-soal-hint" class="input-guru-teks"
               placeholder="Contoh: Ingat penjumlahan berulang...">
@@ -831,6 +828,11 @@
             <label for="form-soal-penjelasan">Penjelasan Jawaban:</label>
             <input type="text" id="form-soal-penjelasan" class="input-guru-teks"
               placeholder="Contoh: 4 × 5 = 20 karena 5 + 5 + 5 + 5 = 20">
+          </div>
+          <div class="form-group-guru penuh">
+            <label for="form-soal-ilustrasi">Nama File Ilustrasi Soal (di assets/ilustrasi-soal/..):</label>
+            <input type="text" id="form-soal-ilustrasi" class="input-guru-teks"
+              placeholder="Contoh: P-01.png atau klepon-3x5.webp (opsional)">
           </div>
         </div>
 
